@@ -5,16 +5,13 @@ let img_input = document.getElementById('img');
 
 //executa função ao mudar o input (enviar arquivo)
 img_input.addEventListener('change', (e) => {
-    console.log(event);
     //arquivo enviado
     let img_file = e.target.files[0];
     console.log(img_file.size)
-    console.log(img_file);
 
     //leitor de arquivo
     let reader = new FileReader;
     reader.readAsDataURL(img_file);
-    console.log(reader);
 
     //ler o arquivo ao carregar a página, e executar a função
     reader.onload = (event) => {
@@ -33,17 +30,28 @@ img_input.addEventListener('change', (e) => {
 
             const context = canvas.getContext("2d");
             context.drawImage(img, 0, 0, canvas.width, canvas.height);
-            console.log(context);
             container.appendChild(img);
 
             //transforma o conteúdo do canvas em arquivo/blob
                 canvas.toBlob(function createBlob(blob){
-                    console.log(blob, blob.size);
+                    console.log(blob);
+                    console.log(blob.size);
                     const fr = new FileReader();
                     fr.readAsDataURL(blob);
                     fr.addEventListener('load', ()=>{
                         const dataURL = fr.result;
+
                         console.log(dataURL);
+
+                        let base64 = dataURL.substring(dataURL.indexOf(',')+1);
+                        //salva o blob em base64 para envio ao servidor
+                        let hidden = document.createElement("input");
+                        hidden.type="hidden";
+                        hidden.name="dataURL";
+                        hidden.value=base64;
+                        document.getElementById('form').appendChild(hidden);
+
+                        //nova imagem comprimida
                         let img2 = new Image();
                         img2.src = dataURL;
                         container.appendChild(img2);
@@ -58,12 +66,8 @@ img_input.addEventListener('change', (e) => {
                     let link = document.createElement("a");
                     link.download = "image.jpeg";
                     link.href = URL.createObjectURL(blob);
-                    let new_img_blob = URL.createObjectURL(blob);
-                    console.log(new_img_blob);
-                    console.log(blob);
                     link.textContent += "Download Comprimido";
                     document.getElementById('form').appendChild(link);
-                    console.log(link.href);
                 }, "image/jpeg",1);
         }
     }
