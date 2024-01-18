@@ -1,4 +1,6 @@
+//definir largura da imagem comprimida
 const WIDTH = 800;
+
 
 //seleciona o input da imagem
 let img_input = document.getElementById('img');
@@ -44,6 +46,7 @@ img_input.addEventListener('change', (e) => {
                         console.log(dataURL);
 
                         let base64 = dataURL.substring(dataURL.indexOf(',')+1);
+                        
                         //salva o blob em base64 para envio ao servidor
                         let hidden = document.createElement("input");
                         hidden.type="hidden";
@@ -56,13 +59,14 @@ img_input.addEventListener('change', (e) => {
                         img2.src = dataURL;
                         container.appendChild(img2);
                         img_name = img_input.files[0].name;
+                        //substitui a imagem pela comprimida no input
                         let newfile = new File([blob], img_name,{
-                            type:"jpeg",
-                            lastModified:new Date().getTime()});
-                            let containfile = new DataTransfer();
-                            containfile.items.add(newfile);
-                            img_input.files = containfile.files;
-                        });
+                        type:"jpeg",
+                        lastModified:new Date().getTime()});
+                        let containfile = new DataTransfer();
+                        containfile.items.add(newfile);
+                        img_input.files = containfile.files;
+                    });
                     let link = document.createElement("a");
                     link.download = "image.jpeg";
                     link.href = URL.createObjectURL(blob);
