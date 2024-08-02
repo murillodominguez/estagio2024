@@ -1,0 +1,152 @@
+/*
+Theme: Learn - Free Educational Responsive Web Template
+Description: Free to use for personal and commercial use
+Author: WebThemez.com
+Website: http://webthemez.com
+Note: Please do not remove the footer backlink (webthemez.com)--(if you want to remove contact: webthemez@gmail.com)
+Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
+*/
+	.img-boat {
+   height: auto; 
+   width: auto; 
+   max-width: 200px; 
+   max-height: 200px;
+     display: block;
+  }
+#imgModal {
+	max-height: 550px;
+}
+
+	@media (max-width: 405px)  {
+.table-action thead {
+  display: none;
+}
+
+.table-action tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-action td:not(:first-child) {
+  display: block;
+}
+
+}
+
+table tr {
+	text-align: center;
+}
+table td {
+	text-align: center;
+}
+table th {
+	text-align: center;
+}
+/* nova tabela responsiva */
+@media screen and (max-width: 600px) {
+	table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+	}
+	
+	table tr {
+	  border-bottom: 10px solid  #ffe100;
+	  display: block;
+	}
+	
+	table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+	 
+	}
+	
+	table td::before {
+		font-weight: bold;
+		display: block;		
+	    content: attr(data-label);
+	    float: left;
+	}
+  }
+
+
+/* final da nova tabela */
+
+
+.btn-espaco{margin-top:2rem;
+}
+.btn-espaco2{margin-bottom:2rem;
+	         width:100%; 
+}
+.btn-espaco:hover{background:#2b374f; color:#fff;}
+.btn-inline{margin-left: 0.2rem;}
+.btn-sgo{margin-bottom: 1px;}
+.btn-toolpagination{margin-bottom: 1px; border: none; background:none; color:#2b374f;}
+.btn-toolpagination-active{margin-bottom: 1px; border: none; background:none; color:#ffffff;}
+.btn-toolbtn{margin-bottom: 1px; border: 1px solid #017A6D; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ffffff; color:#017A6D;}
+.btn-toolbtn:hover{margin-bottom: 1px; border:1px  solid #ffffff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#017A6D; color:#ffffff;}
+.btn-toolbtn-danger{margin-bottom: 1px; border: 1px solid #ff0000; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ffffff; color:#ff0000;}
+.btn-toolbtn-danger:hover{margin-bottom: 1px; border: 1px solid #ffffff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ff0000; color:#ffffff;}
+.btn-toolbtn-warning{margin-bottom: 1px; border: 1px solid #ed9c28; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ffffff; color:#ed9c28;}
+.btn-toolbtn-warning:hover{margin-bottom: 1px; border: 1px solid #ffffff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ed9c28; color:#ffffff;}
+.btn-toolbtn-info{margin-bottom: 1px; border: 1px solid #017A6D; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ffffff; color:#31708f;}
+.btn-toolbtn-info:hover{margin-bottom: 1px; border: 1px solid #ffffff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#31708f; color:#ffffff;}
+.alert-toolbtn-filter{background-color:#DCDCDCDC;border-color:#D3D3D3D3;color:#474A51;}
+.btn-toolfilter{ padding: 10px 20px; font-weight: bold; border: 1px solid #474a51; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ffffff; color:#474a51; margin: 1px;}
+.btn-toolfilter:hover{ border: 1px solid #ffffff; background:#474a51; color:#d9edf7;}
+.btn-title{ padding: 5px 10px; font-weight: bold; border: 1px solid #31708f; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #31708f; color: #fff; margin: 1px;}
+.btn-title:hover{ border: 1px solid #31708f; background: #017A6D; color:#ffffff;}
+.btn-tool-return{margin-bottom: 1px; padding: 10px 20px; font-weight: bold; border: 1px solid #017A6D; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ffffff; color:#017A6D;}
+.btn-tool-return:hover{margin-bottom: 1px; border:1px  solid #ffffff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#2b374f; color:#ffffff;}
+.btn-tool-return:active{margin-bottom: 1px; border:1px  solid #ffffff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#2b374f; color:#ffffff;}
+.btn-tool-return:focus{margin-bottom: 1px; border:1px  solid hsl(0, 0%, 100%); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#2b374f; color:#ffffff;}
+.alert-sgoview{background-color:#f7f7f7;border-color:#cecece;color:#697171}
+.brasao{display: block; min-width: 100px; max-width:25%; } 
+.brasao > a img { width: 100%; height: auto; margin: auto;} 
+.sgo-header-print {
+	display: flex;         
+	flex-wrap:wrap;
+	justify-content: center;          
+ min-height: 80px;
+   padding: 5px;
+ background: #fff;
+ border:none;
+}
+
+.btn-sgopadrao{ padding: 10px 40px; font-weight: bold; border:0 none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #017A6D; color: #fff; margin: 3px;}
+.btn-sgopadrao:hover{ background:#ff0000; color:#017A6D;}
+.btn-sgodanger{ padding: 10px 40px; font-weight: bold; border:0 none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#ff0000; color:#fff; margin: 3px;}
+.btn-sgodanger:hover{ background:#ebccd1; color:#ff0000;}
+.btn-sgoinfo{ padding: 10px 40px; font-weight: bold; border:0 none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#d9edf7; color:#31708f; margin: 3px;}
+.btn-sgoinfo:hover{ background:#31708f; color:#d9edf7;}
+.btn-sgopadraosm{ padding: 10px 20px; font-weight: bold; border:0 none; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; background: #017A6D; color: #fff; margin: 1px;}
+.btn-sgopadraosm:hover{ background:#ff0000; color:#017A6D;}
+.btn-sgodangersm{ padding: 10px 20px; font-weight: bold; border:0 none; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; background:#ff0000; color:#fff; margin: 1px;}
+.btn-sgodangersm:hover{ background:#ebccd1; color:#ff0000;}
+.btn-sgoinfosm{ padding: 10px 20px; font-weight: bold; border:0 none; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; background:#d9edf7; color:#31708f; margin: 1px;}
+.btn-sgoinfosm:hover{ background:#31708f; color:#d9edf7;}
+.btn-sgoinfo2{ padding: 10px 40px; font-weight: bold; border:0 none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:#31708f; color:#d9edf7; margin: 3px;}
+.btn-sgoinfo2:hover{ background:#d9edf7; color:#31708f;}
+.alert-sgofinal{background-color:#FF4500;border-color:#FF0000;color:#ffffff}.alert-danger hr{border-top-color:#FF0000}.alert-danger .alert-link{color:#ffffff}
+.alert-sgoinicio{background-color:	#2E8B57;border-color:#556B2F;color:#ffffff}.alert-danger hr{border-top-color:#556B2F}.alert-danger .alert-link{color:#ffffff}
+.cart_idoso{background: #ffffff url('assets/images/cart_idoso.png') no-repeat;
+	background-size: cover;
+	min-height: 1600px;
+	text-align: center;
+	color: black;
+	font-weight: 300;
+	position: relative;
+	background-position-x: center;
+	-webkit-print-color-adjust: exact;
+}
+.qrcode {
+	display: block;
+justify-content:center;
+text-align:center;
+margin: 0 auto;
+}	

@@ -1,0 +1,80 @@
+/*
+Theme: Learn - Free Educational Responsive Web Template
+Description: Free to use for personal and commercial use
+Author: WebThemez.com
+Website: http://webthemez.com
+Note: Please do not remove the footer backlink (webthemez.com)--(if you want to remove contact: webthemez@gmail.com)
+Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
+*/
+body{
+	background:#f0f0f0;}
+	.my_login{
+	background:#ffffff;
+	margin-top:10rem;
+	padding:2rem;
+	border-radius:1rem;
+	box-shadow: 4px 4px 20px -4px rgba(0,0,0, .1);
+	}
+	.btn-login:hover {background:#2b374f; color:#fff;}
+	
+	.cinza{
+		background: RGB(220,220,220);
+	  border: solid 1px RGB(211,211,211);
+	  text-align:center;
+	 
+	}
+	.encapsulador{
+      display:block;
+	  position: relative;
+	  padding-right: 15px;
+	  margin-top: 10px;
+	  margin-bottom:10px;
+	  cursor: pointer;
+	  background: RGB(220,220,220);
+	  border: none;
+	  width: 100%;
+
+	}
+
+	.encapsulador input[type=checkbox]{
+		opacity: 0;
+		position: absolute;
+		cursor: pointer;
+	}
+
+	.validador{
+   left: 0;
+   top:0;
+   width: 20px;
+   height: 20px;
+   background: RGB();
+   position: absolute;
+	}
+
+	.encapsulador input:checked ~ .validador{
+		background: RGB(220,220,220);
+		border-radius: 25%;
+	}
+
+	.encapsulador .validador:after{
+		top:5px;
+		left:9px;
+		width:5px;
+		height:10px;
+		border: solid #2b374f;
+		border-width: 0 3px 3px 0;
+		-webkit-transform:	rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	.validador:after{
+		content:'';
+		position: absolute;
+		display: none;
+	} 
+
+	.encapsulador input:checked ~ .validador:after{
+		display:block;
+	}
+

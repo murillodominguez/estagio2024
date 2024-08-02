@@ -1,0 +1,16 @@
+
+.form-control-text {
+	display: block;
+	width: 100%;	
+	min-height: 41px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 2.428571;
+	color: #555;
+	background-color: #F7F7F7;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius:0px;
+	}
+
+    

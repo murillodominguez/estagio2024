@@ -1,0 +1,4 @@
+RewriteEngine On
+Rewritecond %{REQUEST_FILENAME} !-f
+Rewritecond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /rfr/index.php?url=$1
