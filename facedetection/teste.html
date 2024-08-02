@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://rawgit.com/allensarkisyan/VideoFrame/master/VideoFrame.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<div class="frame">
+<span id="currentFrame">0</span>
+</div>
+
+<video height="180" width="100%" id="video" controls = "true">
+  <source src="http://www.w3schools.com/html/mov_bbb.mp4"></source>
+</video>
+
+<div id="controls">
+  <button id="play-pause" onclick="drawCanvas()">Play</button>
+</div>
+
+<canvas id="canvas" width="480" height="270"> </canvas>
+<canvas id="canvas2" width="480" height="270"> </canvas>
+
+<style>
+  body {
+    background: black;
+    color:#CCCCCC;
+  }
+
+  #canvas {
+    position: absolute;
+    top: 250px;
+    left: 485px;
+    width:330px;
+    border:2px solid blue;}
+
+    #canvas2{
+      position: absolute;
+      top: 250px;
+      left: 485px;
+      width:330px;
+      border:2px solid blue;
+    }
+
+</style>
+
+
+<script>
+
+var currentFrame = $('#currentFrame');
+var video = VideoFrame({
+    id : 'video',
+    frameRate: 29.97,
+    callback : function(frame) {
+        currentFrame.html(frame);
+    }
+});
+
+
+
+
+$('#play-pause').click(function(){
+    ChangeButtonText();
+});
+
+function ChangeButtonText(){
+  if(video.video.paused){
+        video.video.play();
+        video.listen('frame');
+        $("#play-pause").html('Pause');
+    }else{
+        video.video.pause();
+        video.stopListen();
+        $("#play-pause").html('Play');
+    }
+  }
+
+document.addEventListener('DOMContentLoaded', function(){
+   var v = document.getElementById('video');
+   var canvas = document.getElementById('canvas');
+   var context = canvas.getContext('2d');
+   var ctx = canvas.getContext("2d");
+   var cw = Math.floor(canvas.clientWidth);
+   var ch = Math.floor(canvas.clientHeight);
+   canvas.width = cw;
+   canvas.height = ch;
+   v.addEventListener('play', function(){
+    draw(this,context,cw,ch);
+   },false);
+  },false);
+  function draw(v,c,w,h) {
+   if(v.paused || v.ended) return false;
+   c.drawImage(v,0,0,w,h);
+   setTimeout(draw,20,v,c,w,h);
+ }
+
+function drawCanvas(){
+ var canvas2 = document.getElementById("canvas2");
+ var ctx = canvas2.getContext("2d");
+
+ var x = 10;
+ var ani = setInterval(function(){
+   ctx.clearRect(x-10, 18, 100, 100);
+   ctx.strokeRect(x, 20, 50, 50);
+   x+=5;
+   if(x >= 290 - 50){
+     clearInterval(ani);
+   }
+ },100);
+}
+
+</script>
+
+</html>
