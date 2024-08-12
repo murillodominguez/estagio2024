@@ -55,7 +55,6 @@
 		</div>
 	</div>
 	<!-- /.navbar -->
-
 	<header id="head" class="secondary hidden-print">
 		<div class="container">
 			<div class="row">

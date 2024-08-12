@@ -7,7 +7,7 @@ if(is_array($credentials) and $controllerkey=='UNLOCKED'){
       $path = __DIR__."/../DirController/Dir".ucfirst($controller)."/".$controller."Controller.php";
 
     }
-
+    var_dump($path);
     if(file_exists($path)){
 
       require_once($path);    
@@ -20,7 +20,6 @@ if(is_array($credentials) and $controllerkey=='UNLOCKED'){
 
     }
 }
-var_dump($varPost);
 
 
 

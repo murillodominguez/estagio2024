@@ -178,13 +178,13 @@ function dataValidationCpf($rowUserReceivedData, $link, $varPost, $controller, $
 
         for ($d = 0, $c = 0; $c < $t; $c++) {
 
-            $d += $cpf{$c} * (($t + 1) - $c);
+            $d += $cpf[$c] * (($t + 1) - $c);
 
         }
 
         $d = ((10 * $d) % 11) % 10;
 
-        if ($cpf{$c} != $d){
+        if ($cpf[$c] != $d){
 
             return(validationErrorMessageInvalid($rowUserReceivedData));
         }
@@ -216,13 +216,13 @@ function dataValidationCnpj($rowUserReceivedData, $link, $varPost, $controller, 
 
         for($d = 0, $p = $t - 7, $c = 0; $c < $t; $c++){
 
-            $d += $cnpj{$c} * $p;
+            $d += $cnpj[$c] * $p;
             $p  = ($p < 3) ? 9 : --$p;
         }
 
         $d = ((10 * $d) % 11) % 10;
         
-        if($cnpj{$c} != $d){
+        if($cnpj[$c] != $d){
 
             return(validationErrorMessageInvalid($rowUserReceivedData));
 
@@ -311,7 +311,6 @@ function dataValidationList($rowUserReceivedData, $link, $varPost, $controller, 
     foreach($minimum as $key => $values){
         $temp = explode("(", $values['name']);
         if(is_array($temp)) $values['name']=trim($temp[0]);    
-
         if(treatmentString($value) == $values['name']) return true;
 
     }

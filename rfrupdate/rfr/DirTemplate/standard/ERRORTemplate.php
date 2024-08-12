@@ -20,7 +20,6 @@
 	<script src="<?php echo $linksystem; ?>/assets/standard/js/html5shiv.js"></script>
 	<script src="<?php echo $linksystem; ?>/assets/standard/js/respond.min.js"></script>
 	<![endif]-->
-	<![endif]-->
 	<style type="text/css">
 	body{
 	background:#f0f0f0;}

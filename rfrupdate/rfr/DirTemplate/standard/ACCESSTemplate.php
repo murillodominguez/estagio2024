@@ -104,10 +104,9 @@
 	<!-- Fixed navbar -->
 	<div class="container">
 	
-
     <form action="<?php echo $linksystem; ?>/login/logon" method='post' class='col-lg-4 col-lg-offset-4 my_login'>
 	<a href="<?php echo $linksystem; ?>/">
-					<img src="<?php echo $linksystem; ?>/assets/images/brasao.png" alt="LOGO MAPA SOLIDÁRIO"></a>
+					<img src="/assets/images/brasao.png" alt="LOGO MAPA SOLIDÁRIO"></a>
 			
 		  <p id='demo'></p>
 	<script type='text/javascript'>

@@ -92,7 +92,7 @@ return($new_texto);
 
 
 function treatmentString($string){
-
+    if($string == null) return $string;
     $string=whitespaceRemoval($string);
     $string=(mb_strtoupper($string));
     $string=filteringVarString($string);

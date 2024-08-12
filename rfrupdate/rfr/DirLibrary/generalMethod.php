@@ -8,25 +8,21 @@ function setEditMethod($action){
 
             return('edit');   
 
-            break;
 
         case 'new':
 
              return('new');   
 
-            break;
 
         case 'save':
             
              return('save');
-            
-            break; 
+        
         
         default:
               
              return(false);    
 
-           break;
         
     }
 
@@ -38,23 +34,18 @@ function formatStatus($value){
         
         case '0':
             return('CANCELADO');
-            break;
 
         case '1':
             return('NORMAL');
-            break;
 
         case '2':
                 return('EDIÇÃO');
-                break;
 
         case '3':
-                    return('SUPERVISÃO');
-                    break;        
+                return('SUPERVISÃO');       
 
         default:
             return($value);   
-            break;
         }
 
 }
@@ -228,7 +219,6 @@ function dataPreparationForSql($userReceivedData){
 
 
      function lockController($link, $controller, $method, $action){
-
         return((lockControllerDataBase($link, treatmentString($controller), treatmentString($method), treatmentString($action))>0)?true:false);
      
      }
@@ -266,7 +256,7 @@ function dataPreparationForSql($userReceivedData){
         return($output_file);
     }
 
-    function importCsv($file, $header = true, $separator = ',', $tablename, $link){
+    function importCsv($file, $tablename, $link, $header = true, $separator = ','){
         //VERIFICA SE O ARQUIVO EXISTE
         if(!file_exists($file)){
             die('Arquivo não encontrado!');

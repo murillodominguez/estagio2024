@@ -21,6 +21,7 @@ require_once(__DIR__."/DirSystem/templateSystem.php");  // Inicialização do si
 include_once(__DIR__."/DirSystem/logSystem.php");  // inclusão de middleware - para registro dos logs do sistema
 
 require_once(__DIR__."/DirSystem/driverSystem.php");
+
 /*if($systemContainer=='reload'){
 
  header("Location:".$linksystem); exit();

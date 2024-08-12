@@ -165,7 +165,6 @@ function checkLoginAndPassword($link, $linksystem, $varCookie, $controller, $met
     }
    
     if(checkUserPasswordInDatabase($link, $registration, encryptData($password))==0){
-
         $systemErrorMessage.="ERRO DE LOGIN!";
         $errorMessage="ERRO DE LOGIN!";
         
@@ -454,13 +453,12 @@ return($password);
 }
 
 function removeToken($link, $ServidorID){
-
     $sql="DELETE FROM `token` where id_user=?";
     $stmt = $link->prepare($sql);
     $stmt->bind_Param('i', $ServidorID);
     $stmt->execute();
     
-    return($stmt->affected_rows);
+    return $stmt->affected_rows;
 
 }
 
@@ -504,12 +502,10 @@ function setRandomKeyCookie($randomKey){
 }
 
 function randomKeyRegistrationProcess($link, $linksystem, $ServidorID, $currentTime){
-
+    
     removeToken($link, $ServidorID);
 
     $randomKey=md5($currentTime.$ServidorID).randomGenerator();
-
-    setRandomKeyDataBase($link, $randomKey, $ServidorID, $currentTime);
 
     if(setRandomKeyDataBase($link, $randomKey, $ServidorID, $currentTime)){
 
@@ -569,7 +565,6 @@ function checksIfThereIsAKeyRegisteredInTheDatabaseForThisUser($link, $ServidorI
     $stmt->bind_Param('i', $ServidorID);
     $stmt->execute();    
     $result = $stmt->get_result();
-    
     return($result->num_rows);
 
 }
