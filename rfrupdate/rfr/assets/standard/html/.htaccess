@@ -1,0 +1,13 @@
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+<files legenda.php>
+order allow,deny
+deny from all
+</files>
+
+
+Options -Indexes
