@@ -476,16 +476,6 @@ img_input".$order.".addEventListener('change', (e) => {
 //"' alt='".(isset($alt)?$alt:"imagem'").
 }
 
-// function manufactureComponentFormInputNumber($userReceivedDatarow){
-
-//   extract($userReceivedDatarow);  
-// return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
-// <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-// </div>");
-
-// }
-
-
 function manufactureComponentForm($userReceivedDatarow){
   if(!isset($userReceivedDatarow['typeform'])){
     return;
