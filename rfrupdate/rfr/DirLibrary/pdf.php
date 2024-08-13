@@ -3,7 +3,7 @@ function viewpdf($link, $linksystem, $controller, $method, $varPost, $varGet, $v
 
 
 
-return(call_user_func_array('manufacturePdf', array($link, $linksystem, $controller, $method, $credentials, call_user_func_array($controller.'DataPattern', array($link, $credentials['Mode'],call_user_func_array('getData'.capitalFirstLetterTreatment($controller).'Database', array($link, filter_var($varPost['id']), $credentials['Mode'])))))));
+return call_user_func_array('manufacturePdf', array($link, $linksystem, $controller, $method, $credentials, call_user_func_array($controller.'DataPattern', array($link, $credentials['Mode'],call_user_func_array('getData'.capitalFirstLetterTreatment($controller).'Database', array($link, filter_var($varPost['id']), $credentials['Mode']))))));
 }
 
 function manufacturePdf($link, $linksystem, $controller, $method, $credentials, $userData){
@@ -23,7 +23,7 @@ function manufacturePdf($link, $linksystem, $controller, $method, $credentials, 
 
 function createPdf($link, $linksystem, $controller, $method, $varPost, $varGet, $varSession, $credentials, $userData, $pdfinfo, $enablestyle, $dayoftheToday, $nowTime, $systemErrorMessage){
     
-    require_once('C:\Program Files (x86)\EasyPHP-Devserver-17\eds-www\rfr\assets\standard\composer\vendor\tecnickcom\tcpdf\tcpdf.php');
+    require_once 'C:\Program Files (x86)\EasyPHP-Devserver-17\eds-www\rfr\assets\standard\composer\vendor\tecnickcom\tcpdf\tcpdf.php';
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     $pdf->setCreator(isset($pdfinfo['creator'])?$pdfinfo['creator']:PDF_CREATOR);
     $pdf->setAuthor(isset($pdfinfo['author'])?$pdfinfo['author']:'Rede Familia Riograndina');
@@ -55,7 +55,7 @@ function createPdf($link, $linksystem, $controller, $method, $varPost, $varGet, 
 
     // set some language-dependent strings (optional)
     if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-        require_once(dirname(__FILE__).'/lang/eng.php');
+        require_once dirname(__FILE__).'/lang/eng.php';
         $pdf->setLanguageArray($l);
     }
 

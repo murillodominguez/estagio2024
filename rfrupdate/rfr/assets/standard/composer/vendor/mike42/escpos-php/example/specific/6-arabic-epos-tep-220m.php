@@ -22,7 +22,7 @@ use Mike42\Escpos\PrintBuffers\ImagePrintBuffer;
 /*
  * Drop Ar-php into the folder listed below:
  */
-require_once(dirname(__FILE__) . "/../../I18N/Arabic.php");
+require_once dirname(__FILE__) . "/../../I18N/Arabic.php";
 $fontPath = dirname(__FILE__) . "/../../I18N/Arabic/Examples/GD/ae_AlHor.ttf";
 
 /*

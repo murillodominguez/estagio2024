@@ -18,7 +18,7 @@ $link= mysqli_connect(cSrv, cUser, cPass, cBd);
   
  try{
 
-  if(mysqli_connect_errno($link)) {
+  if(mysqli_connect_errno()) {
     
     throw new Exception(("Falha na conexao: [". mysqli_connect_error($link)."]". mysqli_connect_errno($link)), 1);
   

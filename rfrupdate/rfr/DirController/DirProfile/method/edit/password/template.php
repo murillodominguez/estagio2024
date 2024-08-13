@@ -121,6 +121,6 @@ function passwordForm($link, $linksystem, $controller, $method, $credentials, $u
          ";
           
         
-    return(manufactureComponentContainer(6, $mount));
+    return manufactureComponentContainer(6, $mount);
 
  }

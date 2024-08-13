@@ -19,7 +19,7 @@ function listPrimarydiagnosis($link, $linksystem, $pagenumber, $filterVar, $forO
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'primarydiagnosis', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredPrimarydiagnosis($link, $credentials['Mode']), $numberPerPage, 'primarydiagnosis', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -33,7 +33,7 @@ function primarydiagnosisToolbarlist($link, $UserFunctionalLevel, $idPointer, $m
         array('type' => 'edit',  'btn' => ((($status=primarydiagnosisStateQuery($link, $idPointer, $mode))=="EDIÇÃO")?'check':'check'),'btn-status' => (($status==0)?'btn-toolbtn':'btn-toolbtn-danger'), 'action' => 'check')
     );
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -121,7 +121,7 @@ function primarydiagnosisDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null)
     );
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 function primarydiagnosisDataPattern1($link, $mode, $varPost){
@@ -209,7 +209,7 @@ function primarydiagnosisDataPattern1($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null)
     );
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 

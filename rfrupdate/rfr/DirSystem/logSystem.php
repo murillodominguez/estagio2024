@@ -15,7 +15,7 @@ function getvarPost($varPost){
 
   $return=$return." ) Final";
 
-  return($return);
+  return $return;
 }
 
 function buildLog($link, $varSession, $varPost, $varHeaders, $systemContainer, $ServidorID, $mode, $systemErrorMessage){
@@ -41,7 +41,7 @@ function buildLog($link, $varSession, $varPost, $varHeaders, $systemContainer, $
     }    
     $log=$log."} ".(($systemContainer=='reload')?"[ Reload Automático pelo sistema. ]":'')." :: Final do Registro de Log ::";
     
-    return($log);
+    return $log;
 
 }
 
@@ -52,21 +52,21 @@ function logRegister($link, $instante, $login, $IpAcess, $error, $varUri, $log, 
     $stmt->bind_Param('ssssssssisisss', $instante, $login, $IpAcess, $error, $varUri, $log, $controller, $method, $pagina, $filter, $id_acessed, $mode, $action, $typeaction);
     $stmt->execute();
 
-    return(($stmt->affected_rows >0)?true:false);
+    return ($stmt->affected_rows >0)?true:false;
 
 }
 
 function determinesWhetherToRecordTheLog($controller, $method, $login){
 
-  if($controller=='api') return(false);
+  if($controller=='api') return false;
 
-  if($controller=='assets') return(false);
+  if($controller=='assets') return false;
 
-  if($controller=='standard' and $method=='standard' and empty($login)) return(false);  
+  if($controller=='standard' and $method=='standard' and empty($login)) return false;  
 
-  if($controller=='login' and $method=='standard' and empty($login)) return(false);
+  if($controller=='login' and $method=='standard' and empty($login)) return false;
   
-  return(true);
+  return true;
 }
 
 

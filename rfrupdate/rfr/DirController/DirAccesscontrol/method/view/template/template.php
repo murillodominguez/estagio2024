@@ -53,6 +53,6 @@ $view.="<table class='table table-striped table-hover table-sgo'><thead><tr><th 
 }
 
 $view.="</tbody></table>";
-return(manufactureComponentPageBodyTitle('VISUALIZAR PERMISSÕES DE ACESSO DO USUÁRIO', NULL, NULL).$view);
+return manufactureComponentPageBodyTitle('VISUALIZAR PERMISSÕES DE ACESSO DO USUÁRIO', NULL, NULL).$view;
 
  }

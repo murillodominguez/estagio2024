@@ -10,10 +10,10 @@ function getDataUserDatabase($link, $id, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_assoc());	
+        return $result->fetch_assoc();	
     
     }
 
-    return(0); 
+    return 0; 
 }
 */

@@ -6,22 +6,23 @@
 //      o CONTROLLER E  METHOD solicitado pelo USUARIO.                                //
 //                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////
-if(isset($varGet['url'])and (!empty($varGet['url']))){
+var_dump($varGet);
+if(isset($varUri) and (!empty($varUri)) and $varUri != "/"){
 
-    $enginePartsUrl = explode('/', $varGet['url']);
-    $controller = $enginePartsUrl[0];
+    $enginePartsUrl = explode('/', $varUri);
+    $controller = $enginePartsUrl[1];
     array_shift($enginePartsUrl);
     
-    if((isset($enginePartsUrl[0])) && !empty($enginePartsUrl[0]))
+    if(isset($enginePartsUrl[1]) && !empty($enginePartsUrl[1]))
     {
-      $method = $enginePartsUrl[0];
+      $method = $enginePartsUrl[1];
       array_shift($enginePartsUrl);			  
     }
     else{
       $method='standard';  
     }
                 
-    if(count($enginePartsUrl) >0)
+    if(count($enginePartsUrl) > 0)
     {
       $parameters = $enginePartsUrl;
     }
@@ -30,3 +31,5 @@ else
 {
     $method = $controller = 'standard';			
 }
+var_dump($controller);
+var_dump($method);

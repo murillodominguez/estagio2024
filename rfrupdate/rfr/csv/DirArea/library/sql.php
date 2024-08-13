@@ -11,10 +11,10 @@ function listRegisteredArea($link, $mode, $start, $end){
     
     if($result->num_rows>0){                
         // var_dump($result->fetch_All(MYSQLI_ASSOC));
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     }
 
-    return(0); 
+    return 0; 
 }
 
 function numberOfRegisteredArea($link, $mode){
@@ -28,11 +28,11 @@ function numberOfRegisteredArea($link, $mode){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['number']);
+        return $row['number'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -47,11 +47,11 @@ function areaStateQuery($link, $id, $mode){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['status']); 
+        return $row['status']; 
     
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -66,10 +66,10 @@ function getDataAreaDatabase($link, $id, $mode){
 
     if($result->num_rows>0){
         $arrayresult = $result->fetch_assoc();
-        return($arrayresult);	
+        return $arrayresult;	
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getDataCountAreaImages($link, $id, $mode){
@@ -84,7 +84,7 @@ function getDataCountAreaImages($link, $id, $mode){
         return ($result->fetch_assoc());	
     }
 
-    return(0); 
+    return 0; 
 }
 
 // function getDataAreaImages($link, $id, $mode){
@@ -107,7 +107,7 @@ function getDataCountAreaImages($link, $id, $mode){
 
 //     var_dump($images);
 //     echo '<br><br>';
-//     return($images);
+//     return $images;
 // }
 
 function getDataAreaImage($link, $id, $mode, $order){

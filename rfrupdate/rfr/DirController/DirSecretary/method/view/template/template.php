@@ -11,6 +11,6 @@ function secretaryview($link, $linksystem, $controller, $method, $credentials, $
 <p class='form-control-text'>".(isset($userData['nickname'])?$userData['nickname']:null)."</p>
 </div>";
 
-return(manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DA SECRETARIA', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null)));
+return manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DA SECRETARIA', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null));
 
  }

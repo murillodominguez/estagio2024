@@ -43,9 +43,9 @@
  */
 
 // include the TCPDF class
-require_once(dirname(__FILE__).'/tcpdf.php');
+require_once dirname(__FILE__).'/tcpdf.php';
 // include PDF parser class
-require_once(dirname(__FILE__).'/tcpdf_parser.php');
+require_once dirname(__FILE__).'/tcpdf_parser.php';
 
 /**
  * @class TCPDF_IMPORT

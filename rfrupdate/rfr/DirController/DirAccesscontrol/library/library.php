@@ -19,7 +19,7 @@ function listUser($link, $linksystem, $pagenumber, $filterVar, $forOrder, $order
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'accesscontrol', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredUser($link, $credentials['Mode']), $numberPerPage, 'accesscontrol', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -32,7 +32,7 @@ function accesscontrolToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode
         array('type' => 'edit',  'btn' => 'password','btn-status' => 'btn-toolbtn', 'action' => 'check')
     );
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -52,13 +52,13 @@ function accesscontrolDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => 4, "maximum" => 5, 'placeholder' => null),   
      ); 
 
-     return($userReceivedData);
+     return $userReceivedData;
      
 }
 
 function returnFormAccessPermission($linksystem, $controller, $method, $varLabelPointer, $idPointer, $id_btn, $btnStatus, $action, $typeaction){
 
-    return("<form action='".$linksystem."/".$controller."/".$method."/' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer.">".((isset($typeaction) and !empty($typeaction))?"<input type=hidden name='typeaction' value='".$typeaction."'>":'')."<button type='submit' class='btn btn-tool-return pull-right hidden-print' name='action'  value='".$action."'>".manufactureComponentIconTool('voltar')."</button></form>");
+    return "<form action='".$linksystem."/".$controller."/".$method."/' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer.">".((isset($typeaction) and !empty($typeaction))?"<input type=hidden name='typeaction' value='".$typeaction."'>":'')."<button type='submit' class='btn btn-tool-return pull-right hidden-print' name='action'  value='".$action."'>".manufactureComponentIconTool('voltar')."</button></form>";
    
 }
 
@@ -69,7 +69,7 @@ function getDirController(){
    
     $dir=scandir($path, 0);
 
-    return(array_splice($dir, 2));
+    return array_splice($dir, 2);
 
 }
 
@@ -77,12 +77,12 @@ function convertDirectoryNameToControllerName($dirController){
 
     $controller=array_map(function ($string) {
  
-        return(strtolower(substr($string, 3)));
+        return strtolower(substr($string, 3));
 
     }, $dirController);
 
 
-    return($controller);
+    return $controller;
 }
 
 function mountBarForm($link, $linksystem, $controller, $id_user, $accessibleTools){
@@ -105,13 +105,13 @@ function mountBarForm($link, $linksystem, $controller, $id_user, $accessibleTool
     
         }
     
-    return($return);
+    return $return;
     
     }
 
     function  formToolButton($linksystem, $controller, $method, $idPointer, $id_user, $status){
 
-        return("<li class='pull-right'><form action='".$linksystem."/accesscontrol/edit/' method='post'><input type=hidden name='typeaction' value='".((empty($idPointer) or ($idPointer==null))?'insert':'update')."'><input type=hidden name=id value=".$idPointer."><input type=hidden name=id_user value=".$id_user."><input type=hidden name='controller' value=".treatmentString($controller)."><input type=hidden name='method' value=".treatmentString($method)."><input type=hidden name='status' value=".(($status=='ATIVADO')?'DESATIVADO':'ATIVADO')."><button type='submit' class='btn-inline btn-".(($status=='ATIVADO')?'success':'danger')." btn-white' name='action'  value='save'>".$method."</button></form></li>");
+        return "<li class='pull-right'><form action='".$linksystem."/accesscontrol/edit/' method='post'><input type=hidden name='typeaction' value='".((empty($idPointer) or ($idPointer==null))?'insert':'update')."'><input type=hidden name=id value=".$idPointer."><input type=hidden name=id_user value=".$id_user."><input type=hidden name='controller' value=".treatmentString($controller)."><input type=hidden name='method' value=".treatmentString($method)."><input type=hidden name='status' value=".(($status=='ATIVADO')?'DESATIVADO':'ATIVADO')."><button type='submit' class='btn-inline btn-".(($status=='ATIVADO')?'success':'danger')." btn-white' name='action'  value='save'>".$method."</button></form></li>";
        
     }
 
@@ -135,6 +135,6 @@ function mountBarForm($link, $linksystem, $controller, $id_user, $accessibleTool
             }
         }
     
-    return($return);
+    return $return;
     
     }

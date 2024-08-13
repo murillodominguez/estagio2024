@@ -16,24 +16,24 @@ function validationErrorMessageNotList($rowUserReceivedData){
 
 function validationErrorMessageRequired($rowUserReceivedData){
 
-        return("Dado obrigatório não informado!<bR>".$rowUserReceivedData['tag']);
+        return "Dado obrigatório não informado!<bR>".$rowUserReceivedData['tag'];
         
 }
 
 function validationErrorMessageInvalid($rowUserReceivedData){
 
-    return("Dado informado inválido!<bR>".$rowUserReceivedData['tag']);
+    return "Dado informado inválido!<bR>".$rowUserReceivedData['tag'];
     
 }
 
 function validationErrorImageFormatInvalid($rowUserReceivedData){
     $file = $_FILES[$rowUserReceivedData['label']];
-    return("Arquivo enviado inválido!<br>".$rowUserReceivedData['tag']." => \"".$file['name']."\" não está em um formato válido! (JPG ou PNG)<br>".var_dump($rowUserReceivedData));   
+    return "Arquivo enviado inválido!<br>".$rowUserReceivedData['tag']." => \"".$file['name']."\" não está em um formato válido! (JPG ou PNG)<br>".var_dump($rowUserReceivedData);   
 }
 
 function validationErrorImageSizeInvalid($rowUserReceivedData){
     $file = $_FILES[$rowUserReceivedData['label']];
-    return("Arquivo enviado inválido!<br>".$rowUserReceivedData['tag']." => \"".$file['name']."\" excede o tamanho máx. de arquivo! (Máx: 3MB)<br>".var_dump($rowUserReceivedData));
+    return "Arquivo enviado inválido!<br>".$rowUserReceivedData['tag']." => \"".$file['name']."\" excede o tamanho máx. de arquivo! (Máx: 3MB)<br>".var_dump($rowUserReceivedData);
 }
 
 function dataValidationString($rowUserReceivedData, $link, $varPost, $controller, $varSql){
@@ -46,17 +46,17 @@ function dataValidationString($rowUserReceivedData, $link, $varPost, $controller
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null) return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null) return validationErrorMessageRequired($rowUserReceivedData);
 
-    if(!is_string($value)) return(validationErrorMessage($rowUserReceivedData));
+    if(!is_string($value)) return validationErrorMessage($rowUserReceivedData);
 
     $countValue=strlen($value);
 
-    if(($minimum <= $countValue) and ($countValue <= $maximum)) return('true');
+    if(($minimum <= $countValue) and ($countValue <= $maximum)) return 'true';
 
-    return(validationErrorMessage($rowUserReceivedData));
+    return validationErrorMessage($rowUserReceivedData);
 
 } 
 
@@ -70,15 +70,15 @@ function dataValidationBigint($rowUserReceivedData, $link, $varPost, $controller
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-     if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+     if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
-    if(!is_numeric($value)) return(validationErrorMessage($rowUserReceivedData));        
+    if(!is_numeric($value)) return validationErrorMessage($rowUserReceivedData);        
 
-    if(($minimum <= $value) and ($value <= $maximum)) return('true');
+    if(($minimum <= $value) and ($value <= $maximum)) return 'true';
 
-    return(validationErrorMessage($rowUserReceivedData));
+    return validationErrorMessage($rowUserReceivedData);
 
 }
 
@@ -92,15 +92,15 @@ function dataValidationInteger($rowUserReceivedData, $link, $varPost, $controlle
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
     $value=ltrim($value, "0");
      
-    if(($minimum>=0) and ($maximum>0)) return((filter_var($value, FILTER_VALIDATE_INT,["options" => ["min_range" => $minimum , "max_range"=> $maximum]]))?true:validationErrorMessage($rowUserReceivedData));
+    if(($minimum>=0) and ($maximum>0)) return (filter_var($value, FILTER_VALIDATE_INT,["options" => ["min_range" => $minimum , "max_range"=> $maximum]]))?true:validationErrorMessage($rowUserReceivedData);
          
-    return((filter_var($value, FILTER_VALIDATE_INT))?'true':validationErrorMessage($rowUserReceivedData));
+    return (filter_var($value, FILTER_VALIDATE_INT))?'true':validationErrorMessage($rowUserReceivedData);
 
 }
 
@@ -114,19 +114,19 @@ function dataValidationDate($rowUserReceivedData, $link, $varPost, $controller, 
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
     $arrayDate = explode('-', $value);
 
-    if(!checkdate($arrayDate[1], $arrayDate[2], $arrayDate[0])) return(validationErrorMessage($rowUserReceivedData));
+    if(!checkdate($arrayDate[1], $arrayDate[2], $arrayDate[0])) return validationErrorMessage($rowUserReceivedData);
 
-    if($minimum!=null and $minimum>$value) return(validationErrorMessage($rowUserReceivedData));
+    if($minimum!=null and $minimum>$value) return validationErrorMessage($rowUserReceivedData);
 
-    if($maximum!=null and $maximum<$value) return(validationErrorMessage($rowUserReceivedData));
+    if($maximum!=null and $maximum<$value) return validationErrorMessage($rowUserReceivedData);
 
-    return('true');
+    return 'true';
 
 }
 
@@ -140,17 +140,17 @@ function dataValidationTime($rowUserReceivedData, $link, $varPost, $controller, 
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
-    if (!strpos($value, ':')) return(validationErrorMessage($rowUserReceivedData));
+    if (!strpos($value, ':')) return validationErrorMessage($rowUserReceivedData);
 
-    if(($value<'00:00:00') or ($value>'23:59:59')) return(validationErrorMessage($rowUserReceivedData));
+    if(($value<'00:00:00') or ($value>'23:59:59')) return validationErrorMessage($rowUserReceivedData);
 
-    if(($value<$minimum) or ($value>$maximum)) return(validationErrorMessage($rowUserReceivedData));
+    if(($value<$minimum) or ($value>$maximum)) return validationErrorMessage($rowUserReceivedData);
 
-    return('true');
+    return 'true';
 
 }
 
@@ -160,9 +160,9 @@ function dataValidationCpf($rowUserReceivedData, $link, $varPost, $controller, $
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
     $value = str_replace(array('.','-','/'), "", $value);
 
@@ -170,7 +170,7 @@ function dataValidationCpf($rowUserReceivedData, $link, $varPost, $controller, $
     
     if (strlen($cpf) != 11 || $cpf == '00000000000' || $cpf == '11111111111' || $cpf == '22222222222' || $cpf == '33333333333' || $cpf == '44444444444' || $cpf == '55555555555' || $cpf == '66666666666' || $cpf == '77777777777' || $cpf == '88888888888' || $cpf == '99999999999'){
     
-        return(validationErrorMessageInvalid($rowUserReceivedData));
+        return validationErrorMessageInvalid($rowUserReceivedData);
     
     }
 
@@ -186,11 +186,11 @@ function dataValidationCpf($rowUserReceivedData, $link, $varPost, $controller, $
 
         if ($cpf[$c] != $d){
 
-            return(validationErrorMessageInvalid($rowUserReceivedData));
+            return validationErrorMessageInvalid($rowUserReceivedData);
         }
     }
 
-    return('true');
+    return 'true';
 
 }
 
@@ -200,15 +200,15 @@ function dataValidationCnpj($rowUserReceivedData, $link, $varPost, $controller, 
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
     $cnpj = str_pad(str_replace(array('.','-','/'),'',$value),14,'0',STR_PAD_LEFT);
     
     if (strlen($cnpj) != 14){
 
-        return(validationErrorMessageInvalid($rowUserReceivedData));
+        return validationErrorMessageInvalid($rowUserReceivedData);
 
     }
 
@@ -224,12 +224,12 @@ function dataValidationCnpj($rowUserReceivedData, $link, $varPost, $controller, 
         
         if($cnpj[$c] != $d){
 
-            return(validationErrorMessageInvalid($rowUserReceivedData));
+            return validationErrorMessageInvalid($rowUserReceivedData);
 
         }
     }
 
-    return('true');    
+    return 'true';    
 
 }
 
@@ -239,11 +239,11 @@ function dataValidationPhone($rowUserReceivedData, $link, $varPost, $controller,
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
-    return((preg_match('/^\([0-9]{2}\)?\s?[0-9]{4,5}-[0-9]{4}$/', $value))?'true':validationErrorMessageInvalid($rowUserReceivedData));    
+    return (preg_match('/^\([0-9]{2}\)?\s?[0-9]{4,5}-[0-9]{4}$/', $value))?'true':validationErrorMessageInvalid($rowUserReceivedData);    
 
 }
 
@@ -253,11 +253,11 @@ function dataValidationEmail($rowUserReceivedData, $link, $varPost, $controller,
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
-    return((filter_var($value, FILTER_VALIDATE_EMAIL))?'true':validationErrorMessageInvalid($rowUserReceivedData));
+    return (filter_var($value, FILTER_VALIDATE_EMAIL))?'true':validationErrorMessageInvalid($rowUserReceivedData);
 
 }
 
@@ -267,11 +267,11 @@ function dataValidationIp($rowUserReceivedData, $link, $varPost, $controller, $v
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
-    return((filter_var($value, FILTER_VALIDATE_IP))?'true':validationErrorMessageInvalid($rowUserReceivedData));
+    return (filter_var($value, FILTER_VALIDATE_IP))?'true':validationErrorMessageInvalid($rowUserReceivedData);
 
 }
 
@@ -281,13 +281,13 @@ function dataValidationBoolean($rowUserReceivedData, $link, $varPost, $controlle
 
     $value=(isset($rowUserReceivedData['value'])?$rowUserReceivedData['value']:null);
 
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
     
     $varBoolean= array('1','true', 'on', 'yes', '0', 'false', 'off', 'no', 'TRUE', 'FALSE', 'ON', 'YES', 'OFF', 'NO');
 
-    return(in_array($value, $varBoolean)?'true':validationErrorMessageInvalid($rowUserReceivedData));
+    return in_array($value, $varBoolean)?'true':validationErrorMessageInvalid($rowUserReceivedData);
 
 }
 
@@ -302,11 +302,11 @@ function dataValidationList($rowUserReceivedData, $link, $varPost, $controller, 
     extract($rowUserReceivedData);
     
     
-    if($required==false and $value==null) return('true');
+    if($required==false and $value==null) return 'true';
 
-    if($required!=false and $value==null)  return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required!=false and $value==null)  return validationErrorMessageRequired($rowUserReceivedData);
 
-    if(!is_array($minimum)) return(validationErrorMessage($rowUserReceivedData));
+    if(!is_array($minimum)) return validationErrorMessage($rowUserReceivedData);
     
     foreach($minimum as $key => $values){
         $temp = explode("(", $values['name']);
@@ -325,26 +325,26 @@ function dataValidationMultiselect($rowUserReceivedData, $link, $varPost, $contr
 
     if(!is_array($value) or !is_array($minimum)){
 
-        return(validationErrorMessageNotList($rowUserReceivedData));
+        return validationErrorMessageNotList($rowUserReceivedData);
 
     }
 
     if(!in_array(treatmentString($value[0]),array_column($minimum, 'ref'))){
 
-        return(validationErrorMessageNotList($rowUserReceivedData));
+        return validationErrorMessageNotList($rowUserReceivedData);
     }
    
     foreach (array_column($minimum, 'data') as $row) {
 
         if(in_array($value[1], $row)){
 
-           return('true');
+           return 'true';
 
         }
 
     }    
 
-    return(validationErrorMessageNotList($rowUserReceivedData));
+    return validationErrorMessageNotList($rowUserReceivedData);
   
 }
 
@@ -354,11 +354,11 @@ function dataValidationCheckbox($rowUserReceivedData, $link, $varPost, $controll
 
     $cont=0;
 
-    if(!is_array($minimum) or !is_array($value)) return(validationErrorMessageInvalid($rowUserReceivedData));
+    if(!is_array($minimum) or !is_array($value)) return validationErrorMessageInvalid($rowUserReceivedData);
 
     foreach ($value as $key => $values) {
 
-        if(!array_key_exists($key, $minimum)) return(validationErrorMessageInvalid($rowUserReceivedData));
+        if(!array_key_exists($key, $minimum)) return validationErrorMessageInvalid($rowUserReceivedData);
         
         $temp=explode('(', $minimum[$key]);
 
@@ -368,14 +368,14 @@ function dataValidationCheckbox($rowUserReceivedData, $link, $varPost, $controll
             $var=$minimum[$key];
         }
 
-        if($values!=$var and $values!=null) return(validationErrorMessageInvalid($rowUserReceivedData));
+        if($values!=$var and $values!=null) return validationErrorMessageInvalid($rowUserReceivedData);
 
         if($values==$var) ++$cont;
     }
                 
-    if($required==true and $cont<1) return(validationErrorMessageRequired($rowUserReceivedData));
+    if($required==true and $cont<1) return validationErrorMessageRequired($rowUserReceivedData);
 
-    return('true');
+    return 'true';
 
 }
 
@@ -415,7 +415,7 @@ function validateUserReceivedData($userReceivedData, $link, &$systemErrorMessage
 
                 $systemErrorMessage=$returnofverification;
 
-                return(false);
+                return false;
 
             }          
             
@@ -423,6 +423,6 @@ function validateUserReceivedData($userReceivedData, $link, &$systemErrorMessage
 
     }
  
-    return(true);
+    return true;
  
  }

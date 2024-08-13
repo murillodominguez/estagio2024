@@ -2,8 +2,8 @@
 
 if(file_exists(__DIR__.DIRECTORY_SEPARATOR."method".DIRECTORY_SEPARATOR.$method.DIRECTORY_SEPARATOR.$method.".php")){
   
-  require_once(__DIR__.DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR."library.php"); 
-  require_once(__DIR__.DIRECTORY_SEPARATOR."method".DIRECTORY_SEPARATOR.$method.DIRECTORY_SEPARATOR.$method.".php");
+  require_once __DIR__.DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR."library.php"; 
+  require_once __DIR__.DIRECTORY_SEPARATOR."method".DIRECTORY_SEPARATOR.$method.DIRECTORY_SEPARATOR.$method.".php";
 
 
    if(function_exists($method)){

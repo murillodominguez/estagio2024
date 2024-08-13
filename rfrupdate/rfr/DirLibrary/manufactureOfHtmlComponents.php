@@ -4,7 +4,7 @@ function manufactureComponentAlert($type, $message){
 
   $return="<div class='clear'><br></div><div class='alert alert-".$type."'><h3 class='text-center'>AVISO ".(($type=='danger')?'DE FALHA NO':'DO')." SISTEMA!</h3><br><div class='panel-footer'><br><p class='text-center'>".$message."</p></div></div>";    
 
-  return($return);
+  return $return;
 
 }
 
@@ -12,12 +12,12 @@ function manufactureComponentContainer($size, $core){
 
   $return="<div class='col-sm-".$size."'>".$core."</div>";
 
-  return($return);
+  return $return;
 }
 
 function manufactureComponentButtonReturnList($linksystem, $controller){
 
-  return("<form action='".$linksystem."/".$controller."' method='post'><button type='submit' class='btn btn-tool-return pull-right hidden-print' id='submitreturn' name='action'  value='voltar'>".manufactureComponentIconTool('voltar')."</button></form>");
+  return "<form action='".$linksystem."/".$controller."' method='post'><button type='submit' class='btn btn-tool-return pull-right hidden-print' id='submitreturn' name='action'  value='voltar'>".manufactureComponentIconTool('voltar')."</button></form>";
 
 }
 
@@ -31,11 +31,11 @@ function getReturnRoute($link, $login, $controller, $method){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_assoc());
+        return $result->fetch_assoc();
 
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -48,17 +48,17 @@ function manufactureComponentButtonReturn($link, $linksystem, $login, $controlle
         
         if(is_array($returnRouteData= getReturnRoute($link, $login, $controller, $method))){
 
-          return("<form action='".str_replace('/rfr','', $linksystem).$returnRouteData['uri']."' method='post'><input type=hidden name=pagina value=".(($returnRouteData['page']==null)?'1':$returnRouteData['page'])."><input type=hidden name=filter value=".$returnRouteData['filter']."><button type='submit' class='btn btn-tool-return pull-right hidden-print' name='action' id='submitreturn' value='".(isset($action)?$action:$method)."'>".manufactureComponentIconTool('voltar')."</button></form>");
+          return "<form action='".str_replace('/rfr','', $linksystem).$returnRouteData['uri']."' method='post'><input type=hidden name=pagina value=".(($returnRouteData['page']==null)?'1':$returnRouteData['page'])."><input type=hidden name=filter value=".$returnRouteData['filter']."><button type='submit' class='btn btn-tool-return pull-right hidden-print' name='action' id='submitreturn' value='".(isset($action)?$action:$method)."'>".manufactureComponentIconTool('voltar')."</button></form>";
 
         }
 
-       return($return);       
+       return $return;       
 
 }
 
 function manufactureComponentButtonShowDataFilter($method, $status, $name, $icon){
 
-  return("<a class='btn btn-primary' role='button' data-toggle='collapse' href='#collapse".$method."' aria-expanded='".$status."' aria-controls='collapse".$method."'>".(($icon==null)?$name:("<b class='fa".$icon." fa-lg'></b>"))."</a>");
+  return "<a class='btn btn-primary' role='button' data-toggle='collapse' href='#collapse".$method."' aria-expanded='".$status."' aria-controls='collapse".$method."'>".(($icon==null)?$name:("<b class='fa".$icon." fa-lg'></b>"))."</a>";
 
 }
 
@@ -82,7 +82,7 @@ function manufactureComponentListingDataFilter($link, $linksystem, $controller, 
   </div>
   <button type='submit' class='btn btn-toolfilter pull-right'>Filtrar</button>
 </form></div>";
-  	return($return);
+  	return $return;
 }
 
 
@@ -91,47 +91,46 @@ function manufactureComponentIconTool($id_btn){
     switch ($id_btn) {
 
         case 'edit':
-              return("<b class='fa fa-pencil fa-sm'></b>");
-            break;
+              return "<b class='fa fa-pencil fa-sm'></b>";
+
         case 'view':
-                return("<b class='fa fa-file fa-sm'></b>");
-              break;
+                return "<b class='fa fa-file fa-sm'></b>";
+                
         case 'print':
-                return("<b class='fa fa-print fa-sm'></b>");
-              break;
+                return "<b class='fa fa-print fa-sm'></b>";
+              
         case 'cancel':
-                return("<b class='fa fa-times fa-sm'></b>");
-              break;
+                return "<b class='fa fa-times fa-sm'></b>";
+              
         case 'check':
-                return("<b class='fa fa-check fa-sm'></b>");
-              break;
+                return "<b class='fa fa-check fa-sm'></b>";
+              
         case 'image':
-                return("<b class='fa fa-camera fa-sm'></b>");
-              break; 
+                return "<b class='fa fa-camera fa-sm'></b>";
+               
         case 'report':
-                return("<b class='fa fa-text-width fa-sm'></b>");
-              break;  
+                return "<b class='fa fa-text-width fa-sm'></b>";
+                
         case 'damage':
-                return("<b class='fa fa-bug fa-sm'></b>");
-              break; 
+                return "<b class='fa fa-bug fa-sm'></b>";
+               
         case 'qrcode':
-              return("<b class='fa fa-qrcode fa-sm'></b>");
-              break;  
+              return "<b class='fa fa-qrcode fa-sm'></b>";
+                
         case 'password':
-                return("<b class='fa fa-key fa-sm'></b>");
-                break;     
+                return "<b class='fa fa-key fa-sm'></b>";
+                     
         case 'form':
-                return("<strong>+</strong>");
-                break;
+                return "<strong>+</strong>";
+                
         case 'vehicle':
-                 return("<strong>+</strong>");
-                break;
+                 return "<strong>+</strong>";
+                
         case 'pdf':
                 return "<b class='fa fa-file-text-o'></b>";
-                break;
+                
         default:
-              return(capitalFirstLetterTreatment($id_btn)); 
-              break;
+              return capitalFirstLetterTreatment($id_btn); 
           
   }
 
@@ -139,19 +138,19 @@ function manufactureComponentIconTool($id_btn){
 
 function manufactureComponentFormTitleButton($linksystem, $controller, $method, $varLabelPointer, $idPointer, $id_btn, $btnStatus){
 
-  return("<li class='pull-right'><form action='".$linksystem."/".$controller."/".$method."' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer."><button type='submit' class='btn-inline ".$btnStatus."' name='action'  value='".$id_btn."'>".manufactureComponentIconTool($id_btn)."</button></form></li>");
+  return "<li class='pull-right'><form action='".$linksystem."/".$controller."/".$method."' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer."><button type='submit' class='btn-inline ".$btnStatus."' name='action'  value='".$id_btn."'>".manufactureComponentIconTool($id_btn)."</button></form></li>";
 
 }
 
 
 function manufactureComponentFormToolButton($linksystem, $controller, $method, $varLabelPointer, $idPointer, $id_btn, $btnStatus, $action, $typeaction){
-    return("<li class='pull-right'><form action='".$linksystem."/".$controller."/".$method."/' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer.">".((isset($typeaction) and !empty($typeaction))?"<input type=hidden name='typeaction' value='".$typeaction."'>":'')."<button type='submit' class='btn-inline ".$btnStatus."' name='action'  value='".$action."'>".manufactureComponentIconTool($id_btn)."</button></form></li>");
+    return "<li class='pull-right'><form action='".$linksystem."/".$controller."/".$method."/' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer.">".((isset($typeaction) and !empty($typeaction))?"<input type=hidden name='typeaction' value='".$typeaction."'>":'')."<button type='submit' class='btn-inline ".$btnStatus."' name='action'  value='".$action."'>".manufactureComponentIconTool($id_btn)."</button></form></li>";
 }
 
 
 function manufactureComponentUtilityBar($label, $status){
 
-  return("<li class='pull-right'><span class='label label-inline label-".$status."'>".$label."</span></li>");
+  return "<li class='pull-right'><span class='label label-inline label-".$status."'>".$label."</span></li>";
  
 }
          
@@ -167,13 +166,13 @@ function manufactureComponentToolbar($link, $linksystem, $controller, $method, $
 
     if(!isset($tools)){
 
-      return(null);
+      return null;
 
     }
     
     if(!is_array($tools)){
       
-      return(null);
+      return null;
 
     }
 
@@ -190,11 +189,11 @@ function manufactureComponentToolbar($link, $linksystem, $controller, $method, $
 
       }
 
-      return($return);
+      return $return;
 
 }
 
- return(false);   
+ return false;   
 
 }
 
@@ -246,13 +245,13 @@ function manufactureComponentList($link, $linksystem, $varTableHeader, $varLabel
 
     $return=$return."</tbody></table>"; 
 									      
-return($return);
+return $return;
      
 }
 
 function manufactureFormComponentPaginationBar($linksystem, $controller, $pagina, $filters, $btn_name){
 
-  return("<form action='".$linksystem."/".$controller."/' method='post'><input type=hidden name='pagina' value=".$pagina."><input type=hidden name='filters' value=".$filters."><button class='btn-toolpagination' type='submit' id='pagination'>".$btn_name."</button></form>");
+  return "<form action='".$linksystem."/".$controller."/' method='post'><input type=hidden name='pagina' value=".$pagina."><input type=hidden name='filters' value=".$filters."><button class='btn-toolpagination' type='submit' id='pagination'>".$btn_name."</button></form>";
 
 
 }
@@ -304,7 +303,7 @@ function manufactureComponentPaginationBar($linksystem, $numberOfRow, $numberPer
 
     }
 
-    return($return);
+    return $return;
 
 }
 
@@ -312,7 +311,7 @@ function manufactureComponentPageBodyTitle($varTitle, $previousLink, $backLink, 
 
    $return="<h3 class='section-title alert alert-info'><ul class='nav'><li class='pull-left'>".$varTitle."</li><li class='pull-right'><ul class='nav'><li class='pull-left'>".$previousLink."</li>".(isset($csv)?("<li style='display:inline-block !important' class='pull-left'>".$csv."</li>"):null)."<li class='pull-right'>".$backLink."</li></ul></li></ul></h3>";
 
-return($return);    
+return $return;    
 
 }
 
@@ -320,7 +319,7 @@ function manufactureComponentSectionBodyTitle($varTitle){
 
   $return="<h5 class='col-sm-12 alert alert-info pull-left'>".$varTitle.":</h5>";
 
-return($return);    
+return $return;    
 
 }
 
@@ -328,7 +327,7 @@ function manufactureComponentPageBodyTitleHiddenPrinter($varTitle, $previousLink
 
   $return="<h3 class='section-title alert alert-info hidden-print'><ul class='nav'><li class='pull-left'>".$varTitle."</li><li class='pull-right'><ul class='nav'><li class='pull-left'>".$previousLink."</li><li class='pull-right'>".$backLink."</li></ul></li></ul></h3>";
 
-return($return);    
+return $return;    
 
 }
 
@@ -336,7 +335,7 @@ function manufactureComponentBodySubtitle($varTitle, $previousLink, $backLink, $
 
   $return="<h5 class='section-title alert alert-".(!empty($status)?$status:'info')."'><ul class='nav'><li class='pull-left'>".$varTitle."</li><li class='pull-right'><ul class='nav'><li class='pull-left'>".$previousLink."</li><li class='pull-right'>".$backLink."</li></ul></li></ul></h5>";
 
-return($return);    
+return $return;    
 
 }
 

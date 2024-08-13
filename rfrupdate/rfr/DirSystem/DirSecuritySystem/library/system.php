@@ -8,7 +8,7 @@ function checksNeedtoChangePassword($link, $linksystem, $varPost, $credentials, 
 
     if(strpos( $return, 'danger')) $accessControllerTemplate='PASSWORD';
 
-    return($return);
+    return $return;
    
   }
 
@@ -37,7 +37,7 @@ function checkIfIpBlocked($link,$linksystem, $varCookie, $controller, $method, $
         $accessControllerTemplate='ERROR';
     }
 
-    return($return);
+    return $return;
     
 }
 
@@ -46,13 +46,13 @@ function arrivesControllerWithoutLogin($link, $linksystem, $varCookie, $controll
      ///////////////////////////////////////////////////////////////////
     //                                                               //
     //   VERIFICA SE ESTE CONTROLLER NECESSITA CONTINUAR PROCESSO    //
-    //   DE LOIGN OU NÃO, CONFERINDO NA LISTA DE ARRAY CONTROLLERS   //
+    //   DE LOGIN OU NÃO, CONFERINDO NA LISTA DE ARRAY CONTROLLERS   //
     //    LIBERADOS O ACESSO DE LOGIN                                //
     //                                                               //
     ///////////////////////////////////////////////////////////////////
 
       $array=['api']; 
-      return(in_array($controller, $array));
+      return in_array($controller, $array);
       $accessControllerTemplate='';
     
 }
@@ -96,11 +96,11 @@ function performIpBlockingIfNecessary($link, $linksystem, $varCookie, $controlle
 
          }
 
-         return(true);
+         return true;
 
    }
 
-   return(false);
+   return false;
 
 }
 
@@ -138,11 +138,11 @@ function performUserBlockingIfNecessary($link, $registration, $currentTime, &$sy
 
          unset($_SESSION['ErrorCount']);
 
-         return(true);
+         return true;
 
    }
 
-   return(false);
+   return false;
 
 }
 
@@ -160,7 +160,7 @@ function checkLoginAndPassword($link, $linksystem, $varCookie, $controller, $met
 
         $accessControllerTemplate='ACCESS';
        
-        return(true);
+        return true;
         
     }
    
@@ -178,7 +178,7 @@ function checkLoginAndPassword($link, $linksystem, $varCookie, $controller, $met
 
         }
         
-        return(false);
+        return false;
     }
 
     if(isset($_SESSION['ErrorCount'])) unset($_SESSION['ErrorCount']);
@@ -193,17 +193,17 @@ function checkLoginAndPassword($link, $linksystem, $varCookie, $controller, $met
 
         if(secondaryAccessControl($link, $controller, $method, $action, $ServidorID, $credentials, $errorMessage, $systemErrorMessage, $accessControllerTemplate )){
 
-            return(true);
+            return true;
 
          }
         
         logoff($link, $ServidorID); 
-        return(false);
+        return false;
     }
 
    
   
-    return(true);
+    return true;
   
 }
 
@@ -223,15 +223,15 @@ function arrivalIfLoggedIn($link, $linksystem, $varCookie, $controller, $method,
 
             if(secondaryAccessControl($link, $controller, $method, $action, $ServidorID, $credentials, $errorMessage, $systemErrorMessage, $accessControllerTemplate )){
 
-                return(true);
+                return true;
 
             }
             
             logoff($link, $ServidorID); 
-            return(false);
+            return false;
         }   
   
-    return(true);
+    return true;
 
    }
 
@@ -240,19 +240,19 @@ function arrivalIfLoggedIn($link, $linksystem, $varCookie, $controller, $method,
 
          //$ServidorID=$_SESSION['credentials'];
 
-        // return(secondaryAccessControl($link, $controller, $method, $action, $ServidorID, $credentials, $errorMessage, $systemErrorMessage, $accessControllerTemplate ));
+        // return secondaryAccessControl($link, $controller, $method, $action, $ServidorID, $credentials, $errorMessage, $systemErrorMessage, $accessControllerTemplate );
 
         if(keyValidationProcess($link, $linksystem, $ServidorID, $varCookie['credentials'], $currentTime, $errorMessage, $systemErrorMessage, $accessControllerTemplate)){
 
-            return(secondaryAccessControl($link, $controller, $method, $action, $ServidorID, $credentials, $errorMessage, $systemErrorMessage, $accessControllerTemplate ));
+            return secondaryAccessControl($link, $controller, $method, $action, $ServidorID, $credentials, $errorMessage, $systemErrorMessage, $accessControllerTemplate );
 
         }
 
-        return(false);
+        return false;
     
     }
 
-return(false);
+return false;
 
 }
 
@@ -266,11 +266,11 @@ function checkIfBlockedUser($link, $ServidorID){
     
    if(arrivalInTheDatabaseIfBlockedUser($link, $ServidorID)>0){
 
-    return(true);
+    return true;
 
    }
 
-   return(false);
+   return false;
 
 }
 
@@ -285,11 +285,11 @@ function checkIfActiveUser($link, $ServidorID){
 
    if(arrivalInTheDatabaseIfActiveUser($link, $ServidorID)>0){
 
-       return(false);
+       return false;
 
    }
 
-   return(true);
+   return true;
 
 }
 
@@ -300,18 +300,18 @@ function checkAccessPermission($link, $ServidorID, $controller, $method, $action
 
 if(($controller=='LOGIN') or ($controller=='STANDARD')){
 
-    return(true);
+    return true;
 
 }
     if($method=='STANDARD') $method='VIEW';
 
     if(checkAccessPermissionDatabase($link, $ServidorID, $controller, $method, $action)>0){
 
-        return(true);
+        return true;
 
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -334,11 +334,11 @@ function setCredentials($link, $ServidorID, &$credentials){
          );
 
 
-         return(true);
+         return true;
 
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -359,7 +359,7 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         logoff($link, $ServidorID);
         $accessControllerTemplate='ACCESS';
 
-        return(false);
+        return false;
 
     } 
    
@@ -370,7 +370,7 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         $accessControllerTemplate='ERROR';           
         unset($_SESSION['credentials']);
 
-        return(true);
+        return true;
 
     }
 
@@ -381,7 +381,7 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         $accessControllerTemplate='ERROR';            
         unset($_SESSION['credentials']);
 
-        return(false);
+        return false;
 
     }
 
@@ -391,7 +391,7 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         $systemErrorMessage.="CONTROLADOR SOLICITADA NÃO EXISTE, ".$controller.", [".userIdentifiesLogin($link, $ServidorID)."]";
         $accessControllerTemplate='ERROR';  
 
-        return(true);
+        return true;
 
     }
 
@@ -401,7 +401,7 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         $systemErrorMessage.="CONTROLADOR E/ OU METODO SOLICITADO ESTA DESATIVADO TEMPORARIAMENTE, CONTROLADO [ ".$controller." ] - METODO [ ".$method." ], [".userIdentifiesLogin($link, $ServidorID)."]";
         $accessControllerTemplate='ERROR';  
 
-        return(true);
+        return true;
 
 
     }
@@ -412,7 +412,7 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         $systemErrorMessage.="USUARIO [".userIdentifiesLogin($link, $ServidorID)."], SEM PERMISSÃO DE ACESSO AO CONTROLLER [".$controller."] E/ OU Metodo [".$method."]";
         $accessControllerTemplate='ERROR';
 
-        return(true);
+        return true;
 
     }
 
@@ -423,13 +423,13 @@ function secondaryAccessControl($link, $controller, $method, $action, $ServidorI
         $accessControllerTemplate='ERROR';
         unset($_SESSION['credentials']);
 
-        return(true);
+        return true;
 
     }
 
     $accessControllerTemplate='STANDARD';
   
-    return(true);
+    return true;
 
 
 }
@@ -448,7 +448,7 @@ for ($i = 0; $i <$maximumSize; $i++) {
 
 }
  
-return($password);
+return $password;
 
 }
 
@@ -475,11 +475,11 @@ function getToken($link, $token, $currentTime){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id_user']);
+        return $row['id_user'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -491,7 +491,7 @@ function setRandomKeyDataBase($link, $randomKey, $ServidorID, $currentTime){
     $stmt->bind_Param('iss', $ServidorID, $randomKey, $currentTime);
     $stmt->execute();
     
-    return($stmt->affected_rows);
+    return $stmt->affected_rows;
 
 }
 
@@ -511,12 +511,12 @@ function randomKeyRegistrationProcess($link, $linksystem, $ServidorID, $currentT
 
         setRandomKeyCookie($randomKey);        
 
-        return(true);
+        return true;
 
     }
 
 
-    return(false);
+    return false;
 
 
 }
@@ -529,7 +529,7 @@ function keyValidationProcess($link, $linksystem, &$ServidorID, $token, $current
         $systemErrorMessage='TOKEN NÃO ENCONTRADO NO BANCO DE DADOS!';
         $accessControllerTemplate='ERROR';
 
-        return(false);
+        return false;
 
     }
 
@@ -539,7 +539,7 @@ function keyValidationProcess($link, $linksystem, &$ServidorID, $token, $current
         $systemErrorMessage='FALHA NA REMOÇÃO DE TOKEN ANTIGO!';
         $accessControllerTemplate='ERROR';
 
-        return(false);
+        return false;
     }
 
 
@@ -549,11 +549,11 @@ function keyValidationProcess($link, $linksystem, &$ServidorID, $token, $current
         $systemErrorMessage='FALHA NO PROCESSO DE REGISTRO DE NOVO TOKEN!';
         $accessControllerTemplate='ERROR';
 
-        return(false);
+        return false;
     }
 
 
-    return(true);
+    return true;
 
 
 }
@@ -565,7 +565,7 @@ function checksIfThereIsAKeyRegisteredInTheDatabaseForThisUser($link, $ServidorI
     $stmt->bind_Param('i', $ServidorID);
     $stmt->execute();    
     $result = $stmt->get_result();
-    return($result->num_rows);
+    return $result->num_rows;
 
 }
 
@@ -580,17 +580,17 @@ function getKeyValidity($link, $ServidorID){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['time']);
+        return $row['time'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
 function checkKeyValidity($link, $ServidorID, $currentTime){
 
-    return(((strtotime($currentTime) - strtotime(getKeyValidity($link, $ServidorID)))>=3600)?true:false);
+    return ((strtotime($currentTime) - strtotime(getKeyValidity($link, $ServidorID)))>=3600)?true:false;
 
 }
 
@@ -626,16 +626,16 @@ function checkpassword($link, $linksystem, $controller, $method, $varPost, $varG
        
             updatepassword($link, $credentials['Login'], encryptData($varPost['password']), 'ATIVA');
          
-            return(manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na atualização da senha!')));
+            return manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na atualização da senha!'));
 
           }
          
       }
 
-      return('true');
+      return 'true';
 
     }
 
-       return(manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Senha não atende critérios minimos de segurança!')));
+       return manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Senha não atende critérios minimos de segurança!'));
 
 }

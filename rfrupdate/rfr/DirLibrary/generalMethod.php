@@ -6,22 +6,22 @@ function setEditMethod($action){
 
         case 'edit':
 
-            return('edit');   
+            return 'edit';   
 
 
         case 'new':
 
-             return('new');   
+             return 'new';   
 
 
         case 'save':
             
-             return('save');
+             return 'save';
         
         
         default:
               
-             return(false);    
+             return false;    
 
         
     }
@@ -33,19 +33,19 @@ function formatStatus($value){
     switch ($value) {
         
         case '0':
-            return('CANCELADO');
+            return 'CANCELADO';
 
         case '1':
-            return('NORMAL');
+            return 'NORMAL';
 
         case '2':
-                return('EDIÇÃO');
+                return 'EDIÇÃO';
 
         case '3':
-                return('SUPERVISÃO');       
+                return 'SUPERVISÃO';       
 
         default:
-            return($value);   
+            return $value;   
         }
 
 }
@@ -53,7 +53,7 @@ function formatStatus($value){
 function formatDate($link, $controller, $idPointer, $labelValue, $value){
 
     if(($value==null)and($value!=0)){
-        return($value);
+        return $value;
     }
     
     if(strpos($labelValue, 'status')==true){
@@ -61,27 +61,27 @@ function formatDate($link, $controller, $idPointer, $labelValue, $value){
         if(function_exists($controller.'formatStatus')){
           
  
-             return(call_user_func_array($controller.'formatStatus', array($link, $idPointer)));
+             return call_user_func_array($controller.'formatStatus', array($link, $idPointer));
 
         }
       ;
 
-        return(formatStatus($value));
+        return formatStatus($value);
     } 
     
     if(strpos($labelValue, 'prazo')==true){
        
-        return(date('d/m/Y', strtotime($value)));
+        return date('d/m/Y', strtotime($value));
 
     }
 
     if($labelValue=='time'){
    
-        return(date('d/m/Y H:i', strtotime($value)));
+        return date('d/m/Y H:i', strtotime($value));
 
     }
 
-    return((strpos($labelValue, 'data')!=false)?date('d/m/Y', strtotime($value)):$value);
+    return (strpos($labelValue, 'data')!=false)?date('d/m/Y', strtotime($value)):$value;
 
 }
 
@@ -90,11 +90,11 @@ function checkIfFirstLargest($first, $second){
     
     if($first >= $second){
 
-        return(true);
+        return true;
 
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -129,7 +129,7 @@ function comparedata($userReceivedData, $varDatabase, $link, $varPost, $controll
         }
     }
 
- return($return);
+ return $return;
 
 } 
 
@@ -159,7 +159,7 @@ function dataPreparationForSql($userReceivedData){
     }
   }
     
-  return($return);
+  return $return;
   
   }
 
@@ -190,17 +190,17 @@ function dataPreparationForSql($userReceivedData){
 
     function authorizedUserAccessMethod($type, $userpermissions){
 
-        return(in_array(treatmentString($type), array_column($userpermissions, 'method'))?true:false);
+        return in_array(treatmentString($type), array_column($userpermissions, 'method'))?true:false;
 
     }
 
     function checkIfPathExists($controller){
 
-       if($controller=='login') return(true);
+       if($controller=='login') return true;
 
-       if($controller=='standard') return(true);
+       if($controller=='standard') return true;
 
-       return(file_exists($path = __DIR__."/../DirController/Dir".ucfirst($controller)."/".$controller."Controller.php"));
+       return file_exists($path = __DIR__."/../DirController/Dir".ucfirst($controller)."/".$controller."Controller.php");
 
     }
 
@@ -213,13 +213,13 @@ function dataPreparationForSql($userReceivedData){
         $stmt->execute();
         $result = $stmt->get_result();   
         
-        return($result->num_rows);
+        return $result->num_rows;
      
      }
 
 
      function lockController($link, $controller, $method, $action){
-        return((lockControllerDataBase($link, treatmentString($controller), treatmentString($method), treatmentString($action))>0)?true:false);
+        return (lockControllerDataBase($link, treatmentString($controller), treatmentString($method), treatmentString($action))>0)?true:false;
      
      }
 
@@ -236,24 +236,24 @@ function dataPreparationForSql($userReceivedData){
     
         $row=$result->fetch_assoc();
         
-        return(($row['method']=='tomanage')?'ToManage':'');
+        return ($row['method']=='tomanage')?'ToManage':'';
     
         }
 
-    return('');
+    return '';
 
      }
 
      function startsWith($string, $startStr){
         $len = strlen($startStr);
-        return(substr($string, 0, $len) === $startStr);
+        return substr($string, 0, $len) === $startStr;
     }
 
     function base64tojpeg($base64_str, $output_file, $targetDir){
         $ifp = fopen($targetDir."/".$output_file, "w+");
         fwrite($ifp, base64_decode($base64_str));
         fclose($ifp);
-        return($output_file);
+        return $output_file;
     }
 
     function importCsv($file, $tablename, $link, $header = true, $separator = ','){

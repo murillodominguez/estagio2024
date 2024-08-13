@@ -13,6 +13,6 @@ function sectorview($link, $linksystem, $controller, $method, $credentials, $use
 <p class='form-control-text'>".(isset($userData['area'])?$userData['area']:null)."</p>
 </div>";
 
-return(manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO De SETOR', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null)));
+return manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO De SETOR', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null));
 
  }

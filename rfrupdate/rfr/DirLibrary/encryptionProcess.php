@@ -2,7 +2,7 @@
 
 function encryptData($value){
 
-    return(sha1($value));
+    return sha1($value);
 
 }
 
@@ -35,19 +35,19 @@ function checkPasswordStrength($value){
         $force += 20;
     }   
 
-    return($force);
+    return $force;
 }
 
 function analyzePasswords($oldpassword, $newpassword, $repeatpassword){
 
     if($oldpassword == $newpassword){
-        return(false);
+        return false;
     }
 
     if($newpassword != $repeatpassword){
-        return(false);
+        return false;
     }
 
-    return(true);
+    return true;
 }
 

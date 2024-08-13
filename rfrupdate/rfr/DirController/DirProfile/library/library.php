@@ -9,7 +9,7 @@ function profileToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode){
           array('type' => 'edit',  'btn' => 'edit', 'btn-status' => 'btn-toolbtn', 'action' => 'form'),
       );
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -27,6 +27,6 @@ function profileDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }

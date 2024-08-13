@@ -9,7 +9,7 @@ function manufactureComponentViewsTextarea($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-   return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>");         
+   return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>";         
 
 }
 
@@ -17,7 +17,7 @@ function manufactureComponentViewsText($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-    return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>");         
+    return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>";         
 
 }
 
@@ -25,7 +25,7 @@ function manufactureComponentViewsNumber($userReceivedDatarow){
 
     extract($userReceivedDatarow); 
 
-    return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>");         
+    return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>";         
 
 }
 
@@ -33,7 +33,7 @@ function manufactureComponentViewsCpf($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>");         
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>";         
 
 }
 
@@ -41,7 +41,7 @@ function manufactureComponentViewsCnpj($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
     
-    return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>");         
+    return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>";         
 
 }
 
@@ -49,7 +49,7 @@ function manufactureComponentViewsDate($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-    return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?date('d/m/Y', strtotime($value)):null)."</p></div>");         
+    return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?date('d/m/Y', strtotime($value)):null)."</p></div>";         
 
 }
 
@@ -58,7 +58,7 @@ function manufactureComponentViewsTime($userReceivedDatarow){
 
   extract($userReceivedDatarow);  
 
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?date('H:m', strtotime($value)):null)."</p></div>");         
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?date('H:m', strtotime($value)):null)."</p></div>";         
 
 }
 
@@ -67,7 +67,7 @@ function manufactureComponentViewsMultiselect($userReceivedDatarow)
 
     extract($userReceivedDatarow);  
   
-    return("<div class='form-group'><label  class='form-group' for='tx".$label[0]."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag[0].":</label><p class='form-control-text'>".(isset($value[0])?$value[0]:null)."</p>
+    return "<div class='form-group'><label  class='form-group' for='tx".$label[0]."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag[0].":</label><p class='form-control-text'>".(isset($value[0])?$value[0]:null."</p>
     </div><div class='form-group'><label for='tx".$label[1]."'> ".$tag[1].":</label><p class='form-control-text'>".(isset($value[1])?$value[1]:null)."</p>
     </div>");
   
@@ -87,7 +87,7 @@ function manufactureComponentViewsCheckbox($userReceivedDatarow){
 					
   $return.="</div>";
 
-  return($return);
+  return $return;
 
 }
 
@@ -96,7 +96,7 @@ function manufactureComponentViewsSelect($userReceivedDatarow){
 
   extract($userReceivedDatarow); 
   
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>");      
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label><p class='form-control-text'>".(isset($value)?$value:null)."</p></div>";      
 
 }
 
@@ -107,7 +107,7 @@ function manufactureComponentViewsSubtitle($userReceivedDatarow){
 
   $return="<h5 class='section-title alert alert-".((isset($style) and $style!=null)?$style:'info')."'><ul class='nav'><li class='pull-left'>".$tag."</li><li class='pull-right'><ul class='nav'><li class='pull-left'>".((isset($previousLink) and $previousLink!=null)?$previousLink:'')."</li><li class='pull-right'>".((isset($backLink) and $backLink!=null)?$backLink:'')."</li></ul></li></ul></h5>";
 
-return($return);    
+return $return;    
 
 }
 
@@ -118,7 +118,7 @@ function manufactureComponentViews($userReceivedDatarow){
 
   if(function_exists($definefunction)){
 
-    return(call_user_func($definefunction, $userReceivedDatarow));
+    return call_user_func($definefunction, $userReceivedDatarow);
 
   } 
 
@@ -133,5 +133,5 @@ function manufactureComponentViewsPrint($linksystem, $form){
         $return.=$value;
     }
   
-    return($return);
+    return $return;
   }

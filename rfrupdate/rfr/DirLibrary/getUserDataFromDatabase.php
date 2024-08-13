@@ -8,7 +8,7 @@ function confirmAccessAuthorization($link, $controller, $method, $ServidorID){
     $stmt->execute();
     $result = $stmt->get_result(); 
     
-    return($result->num_rows);
+    return $result->num_rows;
     
 }
 
@@ -22,11 +22,11 @@ function getUserDataBase($link, $id) {
 
     if($result->num_rows>0){
 
-        return($result->fetch_assoc());
+        return $result->fetch_assoc();
 
     }
 
-    return(false);
+    return false;
     
 }
 
@@ -41,11 +41,11 @@ function userIdByRegistration($link, $login){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id']);
+        return $row['id'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -60,11 +60,11 @@ function userIdentifiesLogin($link, $ServidorID){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['registration']);
+        return $row['registration'];
     
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -79,11 +79,11 @@ function userIdentifiesNickname($link, $ServidorID){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['nickname']);
+        return $row['nickname'];
     
     }
 
-    return('');
+    return '';
 
 }
 
@@ -98,11 +98,11 @@ function userIdentifiesSector($link, $ServidorID){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['sector']);
+        return $row['sector'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -117,11 +117,11 @@ function userIdentifiesArea($link, $ServidorID){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['area']);
+        return $row['area'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -136,11 +136,11 @@ function userIdentifiesSecretary($link, $ServidorID){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['secretary']);
+        return $row['secretary'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -153,11 +153,11 @@ function searchTheUserAccessPermissionsDatabase($link, $controller, $ServidorID)
     $result = $stmt->get_result(); 
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0);
+    return 0;
 
 }
 function searchGeneralTheUserAccessPermissionsDatabase($link, $controller, $ServidorID){
@@ -169,11 +169,11 @@ function searchGeneralTheUserAccessPermissionsDatabase($link, $controller, $Serv
     $result = $stmt->get_result(); 
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -186,11 +186,11 @@ function searchAccessPermissionsOnUserControllerInDatabase($link, $ServidorID){
     $result = $stmt->get_result(); 
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -205,11 +205,11 @@ function secretaryIdSearchInName($link, $name){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id']);
+        return $row['id'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -225,11 +225,11 @@ function areaIdSearchInName($link, $name){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id']);
+        return $row['id'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -244,11 +244,11 @@ function userStateQuery($link, $id_servidor){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['status']); 
+        return $row['status']; 
     
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -263,11 +263,11 @@ function postStateQuery($link, $id){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['status']); 
+        return $row['status']; 
     
     }
 
-    return(false);
+    return false;
 
 }
 
@@ -282,11 +282,11 @@ function identifiesUserForName($link, $serv_nickname){
     if($result->num_rows>0){
 
         $row=$result->fetch_assoc();
-        return($row['id_servidor']); 
+        return $row['id_servidor']; 
 
     }
 
-    return(false);
+    return false;
     
 }
 
@@ -300,11 +300,11 @@ function getUserNameDataBase($link) {
 
     if($result->num_rows>0){
 
-        return($result->fetch_all());
+        return $result->fetch_all();
 
     }
 
-    return(false);
+    return false;
     
 }
 
@@ -317,10 +317,10 @@ function getlistSecretary($link, $mode){
 	$result = $stmt->get_result();
 
     if($result->num_rows>0){                
-        return($result->fetch_All(MYSQLI_ASSOC));
+        return $result->fetch_All(MYSQLI_ASSOC);
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getlistArea($link, $mode){
@@ -333,11 +333,11 @@ function getlistArea($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getlistSector($link, $mode){
@@ -350,11 +350,11 @@ function getlistSector($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getlistOffice($link, $mode){
@@ -367,11 +367,11 @@ function getlistOffice($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getlistFunction($link, $mode){
@@ -384,11 +384,11 @@ function getlistFunction($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 
@@ -402,11 +402,11 @@ function listRegisteredUser($link, $mode,$start, $end){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function numberOfRegisteredUser($link, $mode){
@@ -420,11 +420,11 @@ function numberOfRegisteredUser($link, $mode){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['number']);
+        return $row['number'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -439,11 +439,11 @@ function getlistVehicletype($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getlistFuel($link, $mode){
@@ -456,11 +456,11 @@ function getlistFuel($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getlistPublicplace($link, $mode){
@@ -473,11 +473,11 @@ function getlistPublicplace($link, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function getDataUserDatabase($link, $id, $mode){
@@ -490,9 +490,9 @@ function getDataUserDatabase($link, $id, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_assoc());	
+        return $result->fetch_assoc();	
     
     }
 
-    return(0); 
+    return 0; 
 }

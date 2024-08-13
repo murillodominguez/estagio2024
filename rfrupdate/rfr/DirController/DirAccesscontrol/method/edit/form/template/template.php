@@ -58,6 +58,6 @@ $form.="</tbody></table>";
 }
 
 
- return(manufactureComponentPageBodyTitle('GERENCIAMENTO DE PERMISSÕES POR USUARIO', null, null).$form);
+ return manufactureComponentPageBodyTitle('GERENCIAMENTO DE PERMISSÕES POR USUARIO', null, null).$form;
  
  }

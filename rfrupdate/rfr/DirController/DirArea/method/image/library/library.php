@@ -9,7 +9,7 @@ if(!validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $var
 
   require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
-  return(manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).manufactureComponentPageBodyTitle('CADASTRO DE AREAS',null, null).manufactureComponentFormPrint($linksystem, 'area', 'image',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'area', 'edit', 'save')));
+  return manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).manufactureComponentPageBodyTitle('CADASTRO DE AREAS',null, null).manufactureComponentFormPrint($linksystem, 'area', 'image',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'area', 'edit', 'save'));
 
 }
     if(!empty($getcomparedate=comparedata($userReceivedData, getDataAreaDatabase($link, filter_var($varPost['id']), $credentials['Mode']), $link, $varPost, $controller, $varSql))){
@@ -29,7 +29,7 @@ if(!validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $var
                 }
             }
         }
-        return(manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').call_user_func_array('listArea'.checksIfTheLastCallWasFromTheManager($link, $controller, $method, $credentials['Login']), array($link, $linksystem, ((isset($varPost['pagina'])and(!empty($pagina=filteringVar($varPost['pagina'], 'integer'))))?$pagina:0), (isset($varPost['filterVar'])?filteringVar($varPost['filterVar'], 'string'):null), (isset($varPost['forOrder'])?filteringVar($varPost['forOrder'], 'string'):null) , (isset($varPost['orderVar'])?filteringVar($varPost['orderVar'], 'string'):null), $credentials, $systemErrorMessage, $datacontrolsystem)));
+        return manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').call_user_func_array('listArea'.checksIfTheLastCallWasFromTheManager($link, $controller, $method, $credentials['Login']), array($link, $linksystem, ((isset($varPost['pagina'])and(!empty($pagina=filteringVar($varPost['pagina'], 'integer'))))?$pagina:0), (isset($varPost['filterVar'])?filteringVar($varPost['filterVar'], 'string'):null), (isset($varPost['forOrder'])?filteringVar($varPost['forOrder'], 'string'):null) , (isset($varPost['orderVar'])?filteringVar($varPost['orderVar'], 'string'):null), $credentials, $systemErrorMessage, $datacontrolsystem));
     }
-    return(manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').manufactureComponentPageBodyTitle('CADASTRO DE AREAS',null, null).manufactureComponentFormPrint($linksystem, 'area', 'image',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'area', 'edit', 'save')));
+    return manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').manufactureComponentPageBodyTitle('CADASTRO DE AREAS',null, null).manufactureComponentFormPrint($linksystem, 'area', 'image',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'area', 'edit', 'save'));
 }

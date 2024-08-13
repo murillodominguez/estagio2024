@@ -19,7 +19,7 @@ function listOffice($link, $linksystem, $pagenumber, $filterVar, $forOrder, $ord
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'office', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredOffice($link, $credentials['Mode']), $numberPerPage, 'office', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -38,7 +38,7 @@ function officeToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode, $Serv
     }
   
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -55,7 +55,7 @@ function officeDataPattern($link, $mode, $varPost){
         array("type" => "image", 'label' => 'areaimg', 'tag' => 'BRASÃO DA ÁREA', 'typeform' => 'img', "value" => '', "alt" => 'brasão da area', "required" => false, 'isdatabase' => true),
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 

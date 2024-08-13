@@ -59,7 +59,7 @@ function insertsql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
     //     echo "Verdadeiro";
     //   }
     //   else{echo "Falso";}
-      return(($stmt->affected_rows >0)?true:false);
+      return ($stmt->affected_rows >0)?true:false;
 }
 
 function updatesql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, $controller, $varGet, $varSession, $credentials, $dayoftheToday, $nowTime, &$systemErrorMessage){
@@ -131,6 +131,6 @@ function updatesql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
     echo "<br><br><hr>";
     var_dump($stmt);
     echo "<br><br><hr>";
-    return(($stmt->affected_rows >0 || $changeimage=true)?true:false); 
+    return ($stmt->affected_rows >0 || $changeimage=true)?true:false; 
 }
 

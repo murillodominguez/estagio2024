@@ -15,7 +15,7 @@ function checkIfIpBlockedInTheDatabase($link, $IpAcess){
     $stmt->execute();
     $result = $stmt->get_result();
     
-    return($result->num_rows);
+    return $result->num_rows;
  
  }
     
@@ -34,7 +34,7 @@ function checkIfIpBlockedInTheDatabase($link, $IpAcess){
    $stmt->execute();
    $result = $stmt->get_result(); 
 
-   return($result->num_rows);
+   return $result->num_rows;
 
 }
 
@@ -45,7 +45,7 @@ function enterIpBlocking($link, $IpAcess, $currentTime, $log){
     $stmt->bind_Param('sss', $IpAcess, $currentTime, $log);
     $stmt->execute();
     
-    return($stmt->affected_rows);
+    return $stmt->affected_rows;
 
 }
 
@@ -63,7 +63,7 @@ function fetchesErrorsFromTheDatabaseLog($link, $registration, $currentTime, $se
    $stmt->execute();
    $result = $stmt->get_result(); 
 
-   return($result->num_rows);
+   return $result->num_rows;
 
 }
 
@@ -74,7 +74,7 @@ function enterUserLock($link, $registration, $currentTime, $log){
     $stmt->bind_Param('sss', $registration, $currentTime, $log);
     $stmt->execute();
     
-    return($stmt->affected_rows);
+    return $stmt->affected_rows;
 
 }
 
@@ -86,7 +86,7 @@ function checkUserPasswordInDatabase($link, $registration, $password){
     $stmt->execute();
     $result = $stmt->get_result(); 
    
-    return($result->num_rows);
+    return $result->num_rows;
  
  }
 
@@ -98,7 +98,7 @@ function checkUserPasswordInDatabase($link, $registration, $password){
     $stmt->execute();
     $result = $stmt->get_result(); 
  
-    return($result->num_rows);
+    return $result->num_rows;
  
  }
 
@@ -110,7 +110,7 @@ function checkUserPasswordInDatabase($link, $registration, $password){
     $stmt->execute();
     $result = $stmt->get_result(); 
  
-    return($result->num_rows);
+    return $result->num_rows;
  
  }
 
@@ -122,7 +122,7 @@ function checkUserPasswordInDatabase($link, $registration, $password){
    $stmt->execute();
    $result = $stmt->get_result(); 
 
-   return($result->num_rows);
+   return $result->num_rows;
 
  }
 
@@ -137,7 +137,7 @@ function updatepassword($link, $registration, $oldpassword, $newstatus){
    $stmt->bind_Param('siss', $newstatus, $registration, $oldpassword, $status);
    $stmt->execute();  
     
-    return($stmt->affected_rows);
+    return $stmt->affected_rows;
 
 }
 
@@ -150,7 +150,7 @@ function insertpassword($link, $registration, $password, $dayoftheToday){
    $stmt->bind_Param('sss', $password, $registration, $dayoftheToday);
    $stmt->execute();
    
-   return(($stmt->affected_rows >0)?true:false);    
+   return ($stmt->affected_rows >0)?true:false;    
    
    }
 
@@ -165,6 +165,6 @@ function checksNeedtoChangePasswordSql($link, $registration, $dayoftheToday){
    $stmt->execute();
    $result = $stmt->get_result(); 
 
-   return($result->num_rows);
+   return $result->num_rows;
 
  }

@@ -19,7 +19,7 @@ function listZone($link, $linksystem, $pagenumber, $filterVar, $forOrder, $order
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'zone', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredZone($link, $credentials['Mode']), $numberPerPage, 'zone', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -38,7 +38,7 @@ function zoneToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode, $Servid
     }
   
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -61,7 +61,7 @@ function zoneDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 

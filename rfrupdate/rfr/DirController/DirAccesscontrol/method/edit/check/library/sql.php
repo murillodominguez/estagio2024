@@ -17,11 +17,11 @@ function resetpassword($link, $base, $dayoftheToday){
        
         disablepassword($link, $base, 'ATIVA');
           
-        return(false);
+        return false;
 
       }
 
-    return(true); 
+    return true; 
 
 }
 

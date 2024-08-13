@@ -10,10 +10,10 @@ function checkAccessPermissionDatabaseForAccessControl($link, $ServidorID, $cont
  
     if($result->num_rows>0){
 
-    return($row=$result->fetch_assoc());
+    return $row=$result->fetch_assoc();
  
     }
 
-    return(false);
+    return false;
  
   }

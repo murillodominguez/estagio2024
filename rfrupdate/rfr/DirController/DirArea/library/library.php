@@ -18,7 +18,7 @@ function listArea($link, $linksystem, $pagenumber, $filterVar, $forOrder, $order
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'area', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredArea($link, $credentials['Mode']), $numberPerPage, 'area', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -43,7 +43,7 @@ function areaToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode){
     echo '<br><br>';
     var_dump(isAllImageSetArea($link, $idPointer, $mode, 4));
     echo '<br><br>';
-    return($tools);
+    return $tools;
 
 }
 
@@ -72,7 +72,7 @@ function areaDataPattern($link, $mode, $varPost){
      var_dump($_FILES['areaimg']);
      echo '<br><br>';
      }
-     return($userReceivedData);
+     return $userReceivedData;
 }
 
 function areaImageDataPattern($link, $mode, $varPost){
@@ -89,5 +89,5 @@ function areaImageDataPattern($link, $mode, $varPost){
 
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null, 'isdatabase' => false)
     );
-    return($userReceivedData);
+    return $userReceivedData;
 }

@@ -11,6 +11,6 @@ function districtview($link, $linksystem, $controller, $method, $credentials, $u
 <p class='form-control-text'>".(isset($userData['status'])?$userData['status']:null)."</p>
 </div>";
 
-return(manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DA FUNÇÃO', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null)));
+return manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DA FUNÇÃO', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null));
 
  }

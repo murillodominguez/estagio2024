@@ -266,7 +266,7 @@ function dataPreparationForSql($userReceivedData){
         return($output_file);
     }
 
-    function importCsv($file, $header = true, $separator = ',', $tablename, $link){
+    function importCsv($file, $link, $tablename, $header = true, $separator = ','){
         //VERIFICA SE O ARQUIVO EXISTE
         if(!file_exists($file)){
             die('Arquivo não encontrado!');

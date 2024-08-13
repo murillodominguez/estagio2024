@@ -7,7 +7,7 @@ function operationmenu($link, $linksystem, $credentials){
     $return=$return.manufactureComponentPageBodyTitle('CADASTROS DE DOAÇÕES,  REGISTRADAS', null, ((confirmAccessAuthorization($link, 'registereddonation', 'edit', $credentials['IdServidor'])>0)?((!lockController($link, 'registereddonation', 'edit', null))?manufactureComponentFormTitleButton($linksystem, 'registereddonation', 'edit', null, null, 'form', 'btn-title'):NULL):null));
            
 
-    return($return);
+    return $return;
 
 }
 
@@ -31,7 +31,7 @@ function beneficiesDataPattern($link, $mode, $varPost){
          array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
       ); 
  
-      return($userReceivedData);    
+      return $userReceivedData;    
       
  }
 
@@ -55,7 +55,7 @@ function insertsqlbeneficies($link, $linksystem, $varSql, $varGet, $varSession, 
 	$stmt->bind_Param('ssssississsis', $varSql['name'],$varSql['cpf'], $varSql['nis'], $varSql['publicplace'], $varSql['number'], $varSql['complement'], $varSql['district'],$varSql['dependentquantity'], $varSql['gender'],$varSql['latitude'],$varSql['longitude'],$varSql['accuracy'],$credentials['Mode']);
     $stmt->execute();
 
-    return(($stmt->affected_rows >0)?true:false);    
+    return ($stmt->affected_rows >0)?true:false;    
     
 }
 
@@ -71,11 +71,11 @@ function getIDbeneficies($link, $varSql){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id']);
+        return $row['id'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 

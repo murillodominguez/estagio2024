@@ -18,7 +18,7 @@ function listFunction($link, $linksystem, $pagenumber, $filterVar, $forOrder, $o
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'function', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredFunction($link, $credentials['Mode']), $numberPerPage, 'function', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -37,7 +37,7 @@ function functionToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode, $Se
     }
   
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -56,7 +56,7 @@ function functionDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null)
      );
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 

@@ -7,10 +7,10 @@
     if($result->num_rows>0){                
 
         $row=$result->fetch_assoc();
-        return($row['auto_increment']);
+        return $row['auto_increment'];
     
     }
-    return(false);
+    return false;
 }
 
 function uploadImagetoServer($rowUserReceivedData, $link, $varPost, $controller, $varSql, $action){

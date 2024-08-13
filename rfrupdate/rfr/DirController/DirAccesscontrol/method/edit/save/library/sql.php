@@ -7,7 +7,7 @@ function updatesqlaccess($link, $linksystem, $varSql, $varGet, $varSession, $cre
 	$stmt->bind_Param('sssii', $varSql['controller'], $varSql['method'], $varSql['status'], $varSql['id'], $varSql['id_user']);
     $stmt->execute();
 
-    return(($stmt->affected_rows >0)?true:false);    
+    return ($stmt->affected_rows >0)?true:false;    
     
 }
 
@@ -19,7 +19,7 @@ function updatesqlaccess($link, $linksystem, $varSql, $varGet, $varSession, $cre
 // 	$stmt->bind_Param('isss', $varSql['id_user'], $varSql['controller'], $varSql['method'], $varSql['status']);
 //     $stmt->execute();
 
-//     return(($stmt->affected_rows >0)?true:false);    
+//     return ($stmt->affected_rows >0)?true:false;    
     
 // }
 
@@ -34,11 +34,11 @@ function getIDaccesspermitions($link, $varSql){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id']);
+        return $row['id'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -52,10 +52,10 @@ function getAccessPermitionsDatabase($link, $id, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_assoc());
+        return $result->fetch_assoc();
 
     }
 
-    return(false);
+    return false;
 
 }

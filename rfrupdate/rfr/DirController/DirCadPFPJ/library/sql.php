@@ -10,11 +10,11 @@ function listRegisteredPrimarydiagnosis($link, $mode, $start, $end){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function numberOfRegisteredPrimarydiagnosis($link, $mode){
@@ -28,11 +28,11 @@ function numberOfRegisteredPrimarydiagnosis($link, $mode){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['number']);
+        return $row['number'];
     
     }
 
-    return(0);
+    return 0;
 
 }
 
@@ -47,11 +47,11 @@ function primarydiagnosisStateQuery($link, $id, $mode){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['status']); 
+        return $row['status']; 
     
     }
 
-    return(false);
+    return false;
 
 }
 function getDataPrimarydiagnosisDatabase($link, $id, $mode){
@@ -64,9 +64,9 @@ function getDataPrimarydiagnosisDatabase($link, $id, $mode){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_assoc());	
+        return $result->fetch_assoc();	
     
     }
 
-    return(0); 
+    return 0; 
 }

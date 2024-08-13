@@ -19,7 +19,7 @@ function listUser($link, $linksystem, $pagenumber, $filterVar, $forOrder, $order
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'user', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredUserForArea($link, $credentials['Area'], $credentials['Mode']), $numberPerPage, 'user', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -32,7 +32,7 @@ function userToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode){
         array('type' => 'edit',  'btn' => ((($status=userStateQuery($link, $idPointer, $mode))=="EDIÇÃO")?'check':'check'),'btn-status' => (($status==0)?'btn-toolbtn':'btn-toolbtn-danger'), 'action' => 'check')
     );
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -60,7 +60,7 @@ function userDataPattern($link, $mode, $varPost){
        array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 
@@ -81,7 +81,7 @@ function listUserToManage($link, $linksystem, $pagenumber, $filterVar, $forOrder
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'user', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredUser($link, $credentials['Mode']), $numberPerPage, 'user', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 

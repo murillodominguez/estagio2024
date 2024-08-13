@@ -10,11 +10,11 @@ function checkAuthorizedDrivers($link, $ServidorID){
         $result = $stmt->get_result();
         if($result->num_rows>0){
     
-          return($result->fetch_All(MYSQLI_ASSOC));
+          return $result->fetch_All(MYSQLI_ASSOC);
             
         }
     
-        return(false);
+        return false;
 
     }
 
@@ -27,11 +27,11 @@ function checkAuthorizedDrivers($link, $ServidorID){
         $result = $stmt->get_result();
         if($result->num_rows>0){
     
-          return(true);
+          return true;
             
         }
     
-        return(false);
+        return false;
 
     }
 
@@ -43,10 +43,10 @@ function checkAuthorizedDrivers($link, $ServidorID){
 
         require($pathtag);
 
-        return($tag);
+        return $tag;
     }
     
-    return(ucfirst($controller));
+    return ucfirst($controller);
 
     }
 

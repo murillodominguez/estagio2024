@@ -19,7 +19,7 @@ function listPublicplace($link, $linksystem, $pagenumber, $filterVar, $forOrder,
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'publicplace', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredPublicplace($link, $credentials['Mode']), $numberPerPage, 'publicplace', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -38,7 +38,7 @@ function publicplaceToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode, 
     }
   
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -56,7 +56,7 @@ function publicplaceDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 

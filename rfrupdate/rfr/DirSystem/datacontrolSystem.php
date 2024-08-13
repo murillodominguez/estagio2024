@@ -8,7 +8,7 @@ function databaseChangeLog($link, $datacontrolsystem){
     $stmt->execute();
     $result = $stmt->get_result();
 
-    return((($stmt->affected_rows >0)?true:false));
+    return (($stmt->affected_rows >0)?true:false);
 }
 
 if(!empty($datacontrolsystem)){

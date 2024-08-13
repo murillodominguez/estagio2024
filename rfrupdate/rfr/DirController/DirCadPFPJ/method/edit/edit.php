@@ -10,7 +10,7 @@ function edit($link, $linksystem, $controller, $method, $varPost, $varGet, $varS
 
   
       
-        require_once(__DIR__.DIRECTORY_SEPARATOR.$action.DIRECTORY_SEPARATOR.$action.".php");
+        require_once __DIR__.DIRECTORY_SEPARATOR.$action.DIRECTORY_SEPARATOR.$action.".php";
       
       
          if(function_exists($action)){
@@ -32,6 +32,6 @@ function edit($link, $linksystem, $controller, $method, $varPost, $varGet, $varS
       
       }
 
-    return($systemContainer);
+    return $systemContainer;
 
 }

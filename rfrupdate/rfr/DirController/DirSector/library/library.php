@@ -19,7 +19,7 @@ function listSector($link, $linksystem, $pagenumber, $filterVar, $forOrder, $ord
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'sector', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredSector($link, $credentials['Mode']), $numberPerPage, 'sector', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -32,7 +32,7 @@ function sectorToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode){
         array('type' => 'edit',  'btn' => ((($status=sectorStateQuery($link, $idPointer, $mode))=="EDIÇÃO")?'check':'check'),'btn-status' => (($status==0)?'btn-toolbtn':'btn-toolbtn-danger'), 'action' => 'check')
     );
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -52,7 +52,7 @@ function sectorDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
     var_dump((areaIdSearchInName($link, $varPost['area'])));
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }
 

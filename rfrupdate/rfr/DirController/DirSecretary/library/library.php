@@ -19,7 +19,7 @@ function listSecretary($link, $linksystem, $pagenumber, $filterVar, $forOrder, $
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'secretary', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredSecretary($link, $credentials['Mode']), $numberPerPage, 'secretary', null, $pagenumber, null);
 
-     return($return);
+     return $return;
 
 }
 
@@ -38,7 +38,7 @@ function secretaryToolbarlist($link, $UserFunctionalLevel, $idPointer, $mode, $S
     }
   
    
-    return($tools);
+    return $tools;
 
 }
 
@@ -57,6 +57,6 @@ function secretaryDataPattern($link, $mode, $varPost){
         array("type" => "string", 'label' => 'action', 'tag' => 'SALVAR', 'typeform' => 'button', "value" => 'save', "required" => true, "minimum" => null, "maximum" => null, 'placeholder' => null),    
      ); 
 
-     return($userReceivedData);    
+     return $userReceivedData;    
      
 }

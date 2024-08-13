@@ -22,14 +22,14 @@ function manufactureComponentFormInputTextarea($userReceivedDatarow){
            <span class='text-info' id='cont".$label."'><strong>".$maximum."</strong></span>
             Caracteres Restantes</div>";
 
-   return($return);         
+   return $return;         
 }
 
 function manufactureComponentFormInputText($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
   <input type='text' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"minlength=".$minimum:'')." ".(!empty($maximum)?"maxlength=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 </div>");
 
@@ -39,7 +39,7 @@ function manufactureComponentFormInputPassword($userReceivedDatarow, $script){
 
     extract($userReceivedDatarow);  
 
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
   <input type='password' class='form-control' name='".$label."' id='".$label."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"minlength=".$minimum:'')." ".(!empty($maximum)?"maxlength=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')."  ".(($script!=null)?"onkeyup='".$script."()'":'')."/>
 </div>");
 
@@ -48,7 +48,7 @@ function manufactureComponentFormInputPassword($userReceivedDatarow, $script){
 function manufactureComponentFormInputNumber($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
   <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 </div>");
 
@@ -58,7 +58,7 @@ function manufactureComponentFormInputCpf($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
   <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' min=00000000001 max=99999999999 autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 </div>");
 
@@ -68,7 +68,7 @@ function manufactureComponentFormInputCnpj($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
     
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
   <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 </div>");
 
@@ -78,7 +78,7 @@ function manufactureComponentFormInputDate($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
   <input type='date' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 </div>");
 
@@ -89,7 +89,7 @@ function manufactureComponentFormInputTime($userReceivedDatarow){
 
   extract($userReceivedDatarow);  
 
-return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
 <input type='time' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 </div>");
 
@@ -99,14 +99,14 @@ function manufactureComponentFormInputHidden($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return("<input type=hidden name='".$label."' value='".$value."'>");
+  return "<input type=hidden name='".$label."' value='".$value."'>";
 
 }
 
 function manufactureComponentFormInputButton($userReceivedDatarow){
   
     extract($userReceivedDatarow);  
-  return("<div class='rows'><button type='submit' class='btn btn-primary pull-left' id='submit' name='".$label."' value='".$value."'>".$tag."</button></form></div>");
+  return "<div class='rows'><button type='submit' class='btn btn-primary pull-left' id='submit' name='".$label."' value='".$value."'>".$tag."</button></form></div>";
 
 }
 
@@ -114,7 +114,7 @@ function manufactureComponentFormInputButton($userReceivedDatarow){
   
     extract($userReceivedDatarow);  
   
-    return("<div class='rows'><button type='submit' class='btn btn-primary pull-left' id='".$label."' name='".$label."' value='".$value."'>".$tag."</button></form></div>");
+    return "<div class='rows'><button type='submit' class='btn btn-primary pull-left' id='".$label."' name='".$label."' value='".$value."'>".$tag."</button></form></div>";
   
   }
 
@@ -186,7 +186,7 @@ function manufactureComponentFormInputButton($userReceivedDatarow){
            // todas as secondary pois nenhuma primary foi selecionado ainda
   });
   </script>";
-  return($return);
+  return $return;
   
   }
   
@@ -211,7 +211,7 @@ function manufactureComponentFormInputCheckbox($userReceivedDatarow){
 					
   $return.="</div>";
 
-  return($return);
+  return $return;
 
 }
 
@@ -252,7 +252,7 @@ function manufactureComponentFormInputSelect($userReceivedDatarow){
 
   $return.="</select></div>";
 
-  return($return);
+  return $return;
 
 }
 
@@ -263,7 +263,7 @@ function manufactureComponentFormInputSubtitle($userReceivedDatarow){
 
   $return="<h4 class='section-title alert alert-".((isset($style) and $style!=null)?$style:'info')."'><ul class='nav'><li class='".((isset($textstyle) and $textstyle!=null)?$textstyle:'text-start')."'>".$tag."</li><li class='pull-right'><ul class='nav'><li class='pull-left'>".((isset($previousLink) and $previousLink!=null)?$previousLink:'')."</li><li class='pull-right'>".((isset($backLink) and $backLink!=null)?$backLink:'')."</li></ul></li></ul></h5>";
 
-  return($return);    
+  return $return;    
 
 }
 
@@ -479,7 +479,7 @@ img_input".$order.".addEventListener('change', (e) => {
 // function manufactureComponentFormInputNumber($userReceivedDatarow){
 
 //   extract($userReceivedDatarow);  
-// return("<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
+// return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
 // <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
 // </div>");
 
@@ -495,7 +495,7 @@ function manufactureComponentForm($userReceivedDatarow){
 
   if(function_exists($definefunction)){
 
-    return(call_user_func($definefunction, $userReceivedDatarow));
+    return call_user_func($definefunction, $userReceivedDatarow);
 
   }
   
@@ -511,5 +511,5 @@ function manufactureComponentFormPrint($linksystem, $controller, $method, $form)
       $return.=$value;
   }
 
-  return($return."</form>");
+  return $return."</form>";
 }

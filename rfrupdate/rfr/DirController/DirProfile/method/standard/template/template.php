@@ -28,6 +28,6 @@ function userview($link, $linksystem, $controller, $method, $credentials, $userD
 </div>":null).(isset($userData['function'])?"<div class='form-group'><label for='txFunction' >FUNÇÃO:</label>
 <p class='form-control-text'>".$userData['function']."</p>
 </div>":null);
-return(manufactureComponentPageBodyTitle('MEU PERFIL', manufactureComponentFormTitleButton($linksystem, 'profile', 'edit', 'id', $credentials['IdServidor'], 'password', 'btn-title') , manufactureComponentFormTitleButton($linksystem, 'profile', 'edit', 'id', $credentials['IdServidor'], 'edit', 'btn-title') ).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null));
+return manufactureComponentPageBodyTitle('MEU PERFIL', manufactureComponentFormTitleButton($linksystem, 'profile', 'edit', 'id', $credentials['IdServidor'], 'password', 'btn-title') , manufactureComponentFormTitleButton($linksystem, 'profile', 'edit', 'id', $credentials['IdServidor'], 'edit', 'btn-title') ).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null);
 
  }

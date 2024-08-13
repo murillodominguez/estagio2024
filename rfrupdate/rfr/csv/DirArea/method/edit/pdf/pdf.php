@@ -8,7 +8,7 @@ function pdf($link, $linksystem, $controller, $method, $varPost, $varGet, $varSe
         $images['path'.$order] = getDataAreaImage($link, $varPost['id'], $credentials['Mode'], $order);
         ++$order;
     }
-    require_once(__DIR__.DIRECTORY_SEPARATOR.'.'.DIRECTORY_SEPARATOR.'library'.DIRECTORY_SEPARATOR.'sql.php');
+    require_once __DIR__.DIRECTORY_SEPARATOR.'.'.DIRECTORY_SEPARATOR.'library'.DIRECTORY_SEPARATOR.'sql.php';
     }
 // create new PDF document
 

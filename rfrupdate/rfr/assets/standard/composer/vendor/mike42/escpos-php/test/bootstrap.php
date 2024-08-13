@@ -6,9 +6,9 @@ $composer_autoload = __DIR__ . "/../vendor/autoload.php";
 $standalone_autoload = __DIR__ . "/../autoload.php";
 
 if (file_exists($composer_autoload)) {
-    require_once($composer_autoload);
+    require_once $composer_autoload;
 } else {
-    require_once($standalone_autoload);
+    require_once $standalone_autoload;
 }
 
 /**

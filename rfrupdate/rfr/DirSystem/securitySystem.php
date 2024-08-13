@@ -1,7 +1,7 @@
 <?php
 
-require_once(__DIR__.DIRECTORY_SEPARATOR."DirSecuritySystem".DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR."sql.php");
-require_once(__DIR__.DIRECTORY_SEPARATOR."DirSecuritySystem".DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR."system.php");
+require_once __DIR__.DIRECTORY_SEPARATOR."DirSecuritySystem".DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR."sql.php";
+require_once __DIR__.DIRECTORY_SEPARATOR."DirSecuritySystem".DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR."system.php";
 
 $primaryOrderOfExecutionOfFunctions=[ 'checkIfIpBlocked', 'arrivesControllerWithoutLogin', 'performIpBlockingIfNecessary', 'arrivalIfLoggedIn','checkLoginAndPassword'];
 

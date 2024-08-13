@@ -11,7 +11,7 @@ if(!validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $var
   require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
 
-  return(manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer')))));
+  return manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer'))));
 
 }
 
@@ -25,13 +25,13 @@ if(!validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $var
       require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
     
     
-      return(manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer')))));
+      return manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer'))));
     }
 
 }
 require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
-return(manufactureComponentContainer( 6,manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer')))));
+return manufactureComponentContainer( 6,manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer'))));
 
 }
 
@@ -45,7 +45,7 @@ function insert($link, $linksystem, $controller, $method, $varPost, $varGet, $va
   require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
 
-  return(manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer')))));
+  return manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer'))));
  
  }
  
@@ -58,7 +58,7 @@ function insert($link, $linksystem, $controller, $method, $varPost, $varGet, $va
        require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
 
-       return(manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer'))))); 
+       return manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer')))); 
 
      }
      
@@ -66,7 +66,7 @@ function insert($link, $linksystem, $controller, $method, $varPost, $varGet, $va
    
       require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
-   return(manufactureComponentContainer(6, manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer')))));
+   return manufactureComponentContainer(6, manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').accesscontrolForm($link, $linksystem, 'accesscontrol', 'edit', $credentials, getUserDataBase($link, filteringVar($varPost['id_user'], 'integer'))));
  
  }
 

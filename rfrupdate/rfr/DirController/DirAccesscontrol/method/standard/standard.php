@@ -23,6 +23,6 @@ function standard($link, $linksystem, $controller, $method, $varPost, $varGet, $
 
      }
 
-    return($return);
+    return $return;
     
 }

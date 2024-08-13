@@ -11,11 +11,11 @@ function listRegisteredUserForArea($link, $mode, $area, $start, $end){
     
     if($result->num_rows>0){                
     
-        return($result->fetch_All(MYSQLI_ASSOC));	
+        return $result->fetch_All(MYSQLI_ASSOC);	
     
     }
 
-    return(0); 
+    return 0; 
 }
 
 function numberOfRegisteredUserForArea($link, $area, $mode){
@@ -29,10 +29,10 @@ function numberOfRegisteredUserForArea($link, $area, $mode){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['number']);
+        return $row['number'];
     
     }
 
-    return(0);
+    return 0;
 
 }

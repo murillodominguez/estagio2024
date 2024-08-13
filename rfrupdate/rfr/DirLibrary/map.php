@@ -12,10 +12,10 @@ function searchCenterZone($link, $name, $mode){
         if($result->num_rows>0){                
         
             $row=$result->fetch_assoc();
-            return('[ '.$row['ref_latitude'].", ".$row['ref_longitude']." ], ".$row['zoom']);
+            return '[ '.$row['ref_latitude'].", ".$row['ref_longitude']." ], ".$row['zoom'];
         
         }
     
-        return(0);
+        return 0;
     
     }

@@ -11,7 +11,7 @@ if(!validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $var
 
   require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."form".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
-  return(manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).manufactureComponentPageBodyTitle('ALTERAÇÃO NO PERFIL',null, null).manufactureComponentFormPrint($linksystem, 'profile', 'edit',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'profile', 'edit', 'save')));
+  return manufactureComponentContainer(6,manufactureComponentAlert('danger', $systemErrorMessage).manufactureComponentPageBodyTitle('ALTERAÇÃO NO PERFIL',null, null).manufactureComponentFormPrint($linksystem, 'profile', 'edit',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'profile', 'edit', 'save'));
 
 }
 
@@ -21,13 +21,13 @@ if(!validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $var
 
     if(!updatesql($link, $linksystem, $userReceivedData, $varSql, $varPost, $controller, $varGet, $varSession, $credentials, $dayoftheToday, $nowTime, $systemErrorMessage)){
       $datacontrolsystem='';
-      return(manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').manufactureComponentPageBodyTitle('CADASTRO DE PERFIL',null, null).manufactureComponentFormPrint($linksystem, 'profile', 'edit',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'profile', 'edit', 'save')));
+      return manufactureComponentContainer(6,manufactureComponentAlert('danger', 'Falha na inserção dos dados no banco de dados!').manufactureComponentPageBodyTitle('CADASTRO DE PERFIL',null, null).manufactureComponentFormPrint($linksystem, 'profile', 'edit',(array_map('manufactureComponentForm', $userReceivedData))).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'profile', 'edit', 'save'));
     }
 
 }
 
   require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR.'standard'.DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");  
-  return(manufactureComponentContainer(6,manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').userview($link, $linksystem, 'profile', $method, $credentials, getDataUserDatabase($link, $credentials['IdServidor'], $credentials['Mode']))));
+  return manufactureComponentContainer(6,manufactureComponentAlert('success', 'Realizado a atualização com sucesso!').userview($link, $linksystem, 'profile', $method, $credentials, getDataUserDatabase($link, $credentials['IdServidor'], $credentials['Mode'])));
 
 }
 
@@ -51,19 +51,19 @@ function password($link, $linksystem, $controller, $method, $varPost, $varGet, $
         
             require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."password".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
-            return(manufactureComponentContainer(12,manufactureComponentAlert('danger', 'Falha na atualização da senha!')).passwordForm($link, $linksystem, $controller, $method, $credentials, null));
+            return manufactureComponentContainer(12,manufactureComponentAlert('danger', 'Falha na atualização da senha!')).passwordForm($link, $linksystem, $controller, $method, $credentials, null);
 
           }
          
       }
 
-      return(manufactureComponentContainer(12,manufactureComponentAlert('success', 'Atualizado com sucesso!')));
+      return manufactureComponentContainer(12,manufactureComponentAlert('success', 'Atualizado com sucesso!'));
 
     }
 
     require(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."password".DIRECTORY_SEPARATOR."template".DIRECTORY_SEPARATOR."template.php");
 
-    return(manufactureComponentContainer(12,manufactureComponentAlert('danger', 'Senha não atende critérios minimos de segurança!')).passwordForm($link, $linksystem, $controller, $method, $credentials, null));
+    return manufactureComponentContainer(12,manufactureComponentAlert('danger', 'Senha não atende critérios minimos de segurança!')).passwordForm($link, $linksystem, $controller, $method, $credentials, null);
 
 }
 

@@ -7,6 +7,6 @@ function changeTheStatusOfThePrimarydiagnosis($link, $id, $status, $mode){
     $stmt->bind_Param('sis', $status, $id, $mode);
 	$stmt->execute();
 
-    return(($stmt->affected_rows >0)?true:false); 
+    return ($stmt->affected_rows >0)?true:false; 
 
 }

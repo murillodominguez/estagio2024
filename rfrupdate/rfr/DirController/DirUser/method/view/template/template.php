@@ -34,6 +34,6 @@ function userview($link, $linksystem, $controller, $method, $credentials, $userD
 <p class='form-control-text'>".(isset($userData['function'])?$userData['function']:null)."</p>
 </div>";
 
-return(manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DE USUARIO', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null)));
+return manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DE USUARIO', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null));
 
  }

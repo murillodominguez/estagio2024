@@ -29,6 +29,6 @@ function areaview($link, $linksystem, $controller, $method, $credentials, $userD
 <img src='/rfr/".getDataAreaImage($link, $userData['id'], $credentials['Mode'], 4)."'>
 </div>";
 
-return(manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DA AREA', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null)));
+return manufactureComponentContainer(6,manufactureComponentPageBodyTitle('VISUALIZAR CADASTRO DA AREA', NULL, NULL).$view.manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], $controller, $method, null));
 
  }

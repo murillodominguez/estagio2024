@@ -23,7 +23,7 @@ if($controller!='api'){
           
         }
           
-        require_once($template);
+        require_once $template;
           
       } catch (\Exception $e) {
     

@@ -62,7 +62,7 @@ if (!defined('K_TCPDF_EXTERNAL_CONFIG') OR !K_TCPDF_EXTERNAL_CONFIG) {
 	$tcpdf_config_files = array(dirname(__FILE__).'/config/tcpdf_config.php', '/etc/php-tcpdf/tcpdf_config.php', '/etc/tcpdf/tcpdf_config.php', '/etc/tcpdf_config.php');
 	foreach ($tcpdf_config_files as $tcpdf_config) {
 		if (@file_exists($tcpdf_config) AND is_readable($tcpdf_config)) {
-			require_once($tcpdf_config);
+			require_once $tcpdf_config;
 			break;
 		}
 	}

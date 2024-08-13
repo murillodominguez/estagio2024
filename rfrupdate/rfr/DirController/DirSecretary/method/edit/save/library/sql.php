@@ -10,10 +10,10 @@ function getIDsecretary($link, $varSql){
     if($result->num_rows>0){                
     
         $row=$result->fetch_assoc();
-        return($row['id']);
+        return $row['id'];
     
     }
 
-    return(0);
+    return 0;
 
 }
