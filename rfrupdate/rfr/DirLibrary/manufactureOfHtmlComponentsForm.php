@@ -29,9 +29,9 @@ function manufactureComponentFormInputText($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
-  <input type='text' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"minlength=".$minimum:'')." ".(!empty($maximum)?"maxlength=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-</div>");
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".(isset($style) and $style!=null?"class='text-".$style."'":'').">".$tag.":</label>
+  <input type='text' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"minlength=".$minimum:'')." ".(!empty($maximum)?"maxlength=".$maximum:'')." autocomplete='off' ".($required==true?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
+</div>";
 
 }
 
@@ -39,18 +39,18 @@ function manufactureComponentFormInputPassword($userReceivedDatarow, $script){
 
     extract($userReceivedDatarow);  
 
-  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
   <input type='password' class='form-control' name='".$label."' id='".$label."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"minlength=".$minimum:'')." ".(!empty($maximum)?"maxlength=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')."  ".(($script!=null)?"onkeyup='".$script."()'":'')."/>
-</div>");
+</div>";
 
 }
 
 function manufactureComponentFormInputNumber($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
-  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
   <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-</div>");
+</div>";
 
 }
 
@@ -58,9 +58,9 @@ function manufactureComponentFormInputCpf($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
   <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' min=00000000001 max=99999999999 autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-</div>");
+</div>";
 
 }
 
@@ -68,9 +68,9 @@ function manufactureComponentFormInputCnpj($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
     
-  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
   <input type='number' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-</div>");
+</div>";
 
 }
 
@@ -78,9 +78,9 @@ function manufactureComponentFormInputDate($userReceivedDatarow){
 
     extract($userReceivedDatarow);  
 
-  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
+  return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
   <input type='date' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-</div>");
+</div>";
 
 }
 
@@ -89,9 +89,9 @@ function manufactureComponentFormInputTime($userReceivedDatarow){
 
   extract($userReceivedDatarow);  
 
-return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":''.">".$tag.":</label>
+return "<div class='form-group'><label for='tx".ucfirst($label)."' ".((isset($style) and $style!=null)?"class='text-".$style."'":'').">".$tag.":</label>
 <input type='time' class='form-control' name='".$label."' id='tx".ucfirst($label)."' value='".(isset($value)?$value:null)."' ".(!empty($minimum)?"min=".$minimum:'')." ".(!empty($maximum)?"max=".$maximum:'')." autocomplete='off' ".(($required==true)?"required/":'')." ".((!empty($placeholder))?"placeholder='".$placeholder."'":'')." />
-</div>");
+</div>";
 
 }
 

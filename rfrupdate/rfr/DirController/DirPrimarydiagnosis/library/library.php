@@ -2,7 +2,7 @@
 
 require("sql.php");
 
-function listPrimarydiagnosis($link, $linksystem, $pagenumber, $filterVar, $forOrder, $orderVar, $credentials, &$systemErrorMessage){
+function listPrimarydiagnosis($link, $linksystem, $pagenumber, $filterVar, $forOrder, $orderVar, $credentials, $systemErrorMessage){
 
     $return=manufactureComponentPageBodyTitle('LISTA DE DIAGNÓSTICOS CADASTRADOS', null, manufactureComponentFormTitleButton($linksystem, 'primarydiagnosis', 'edit', null, null, 'form', 'btn-title'));
     
@@ -15,7 +15,6 @@ function listPrimarydiagnosis($link, $linksystem, $pagenumber, $filterVar, $forO
     $varTableHeader = array ('', 'NOME', 'MATRÍCULA', 'STATUS', 'FERRAMENTA(S)');
     $varLabelDataBase = array ('', 'name', 'matriculafunc', 'status');
     $varDataBase=listRegisteredPrimarydiagnosis($link, $credentials['Mode'], $start, $numberPerPage);
-    //$return=$return.manufactureComponentListingDataFilter($link, $linksystem, 'user', 'list' , (($filterVar!=null)?$filterVar:null), (($forOrder!=null)?$forOrder:null), (($orderVar=='ASC')?'ASC':(($orderVar=='DESC')?'DESC':null)));
     $return=$return.manufactureComponentList($link, $linksystem, $varTableHeader, $varLabelDataBase, $varDataBase, 'primarydiagnosis', 'list', 'id', $credentials['IdServidor'], null, $start, $credentials['Mode']);
     $return=$return.manufactureComponentPaginationBar($linksystem, numberOfRegisteredPrimarydiagnosis($link, $credentials['Mode']), $numberPerPage, 'primarydiagnosis', null, $pagenumber, null);
 
@@ -30,7 +29,7 @@ function primarydiagnosisToolbarlist($link, $UserFunctionalLevel, $idPointer, $m
         array('type' => 'view', 'btn' => 'view', 'btn-status' => 'btn-toolbtn'),
         array('type' => 'edit',  'btn' => 'edit', 'btn-status' => 'btn-toolbtn', 'action' => 'form'),
         array('type' => 'pdf',  'btn' => 'print', 'btn-status' => 'btn-toolbtn', 'action' => 'pdf'),
-        array('type' => 'edit',  'btn' => ((($status=primarydiagnosisStateQuery($link, $idPointer, $mode))=="EDIÇÃO")?'check':'check'),'btn-status' => (($status==0)?'btn-toolbtn':'btn-toolbtn-danger'), 'action' => 'check')
+        array('type' => 'edit',  'btn' => ((($status=primarydiagnosisStateQuery($link, $idPointer, $mode))=="EDIÇÃO")?'check':'check'),'btn-status' => (($status==0)?'btn-toolbtn':'btn-toolbtn'), 'action' => 'check')
     );
    
     return $tools;

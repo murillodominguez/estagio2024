@@ -9,9 +9,7 @@ if(is_array($credentials) and $controllerkey=='UNLOCKED'){
     }
 
     if(file_exists($path)){
-      echo 'oi';
       require_once $path;    
-      
     }
 
     if(!file_exists($path) and (!in_array($controller, $changedefault))){
