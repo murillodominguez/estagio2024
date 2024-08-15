@@ -144,7 +144,8 @@ function manufactureComponentFormTitleButton($linksystem, $controller, $method, 
 
 
 function manufactureComponentFormToolButton($linksystem, $controller, $method, $varLabelPointer, $idPointer, $id_btn, $btnStatus, $action, $typeaction){
-    return "<li class='pull-right'><form action='".$linksystem."/".$controller."/".$method."/' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer.">".((isset($typeaction) and !empty($typeaction))?"<input type=hidden name='typeaction' value='".$typeaction."'>":'')."<button type='submit' class='btn-inline ".$btnStatus."' name='action'  value='".$action."'>".manufactureComponentIconTool($id_btn)."</button></form></li>";
+  if($action == "pdf") return "<li class='pull-right'><a class='btn-inline ".$btnStatus."' href='".$linksystem."/".$controller."/pdf?id=".$idPointer."' target='_blank'>".manufactureComponentIconTool($id_btn)."</a></li>";
+  return "<li class='pull-right'><form action='".$linksystem."/".$controller."/".$method."/' method='post'><input type=hidden name=".$varLabelPointer." value=".$idPointer.">".((isset($typeaction) and !empty($typeaction))?"<input type=hidden name='typeaction' value='".$typeaction."'>":'')."<button type='submit' class='btn-inline ".$btnStatus."' name='action'  value='".$action."'>".manufactureComponentIconTool($id_btn)."</button></form></li>";
 }
 
 

@@ -98,3 +98,15 @@
 /*           Images            */
 /*******************************/
 .img-rounded { -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+a.btn-toolbtn{
+	padding: 1px 6px !important;
+}
+
+a.btn-toolbtn:hover{
+	color: white !important;
+	background-color: #007c6d !important;
+}
+
+a.btn-toolbtn:visited{
+	color: #017A6D;
+}

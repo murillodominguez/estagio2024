@@ -6,10 +6,9 @@
 //      o CONTROLLER E  METHOD solicitado pelo USUARIO.                                //
 //                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////
-var_dump($varGet);
 if(isset($varUri) and (!empty($varUri)) and $varUri != "/"){
-
-    $enginePartsUrl = explode('/', $varUri);
+    $isolateGetValueUrl = explode('?', $varUri)[0];
+    $enginePartsUrl = explode('/', $isolateGetValueUrl);
     $controller = $enginePartsUrl[1];
     array_shift($enginePartsUrl);
     
@@ -31,5 +30,3 @@ else
 {
     $method = $controller = 'standard';			
 }
-var_dump($controller);
-var_dump($method);
