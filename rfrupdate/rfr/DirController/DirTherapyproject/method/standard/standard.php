@@ -12,14 +12,14 @@ function standard($link, $linksystem, $controller, $method, $varPost, $varGet, $
     
     if(validateUserReceivedData($userReceivedData, $link, $systemErrorMessage, $varPost, $controller, null)){
        
-    $return=listPrimarydiagnosis($link, $linksystem, ((isset($varPost['pagina'])and(!empty($pagina=filteringVar($varPost['pagina'], 'integer'))))?$pagina:0), (isset($varPost['filterVar'])?filteringVar($varPost['filterVar'], 'string'):null), (isset($varPost['forOrder'])?filteringVar($varPost['forOrder'], 'string'):null) , (isset($varPost['orderVar'])?filteringVar($varPost['orderVar'], 'string'):null), $credentials, $systemErrorMessage, $datacontrolsystem);
+    $return=listTherapyproject($link, $linksystem, ((isset($varPost['pagina'])and(!empty($pagina=filteringVar($varPost['pagina'], 'integer'))))?$pagina:0), (isset($varPost['filterVar'])?filteringVar($varPost['filterVar'], 'string'):null), (isset($varPost['forOrder'])?filteringVar($varPost['forOrder'], 'string'):null) , (isset($varPost['orderVar'])?filteringVar($varPost['orderVar'], 'string'):null), $credentials, $systemErrorMessage, $datacontrolsystem);
      
      }
 
      if(!isset($return)){
 
         $systemErrorMessage="Falha na verificação dos dados informados!";
-        $return=manufactureComponentContainer(6, manufactureComponentAlert('danger', $systemErrorMessage).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'primarydiagnosis', null, null));
+        $return=manufactureComponentContainer(6, manufactureComponentAlert('danger', $systemErrorMessage).manufactureComponentButtonReturn($link, $linksystem, $credentials['Login'], 'therapyproject', null, null));
 
      }
 

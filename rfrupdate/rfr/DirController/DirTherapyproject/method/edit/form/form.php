@@ -25,21 +25,21 @@ function form($link, $linksystem, $controller, $method, $varPost, $varGet, $varS
     
     require_once "template".DIRECTORY_SEPARATOR."template.php"; 
 
-    if(function_exists('primarydiagnosisForm')){
+    if(function_exists('therapyprojectForm')){
 
         if(isset($varPost['id'])){
 
-           return primarydiagnosisForm($link, $linksystem, 'primarydiagnosis', 'edit', $credentials, primarydiagnosisDataPattern($link, $credentials['Mode'],getDataPrimarydiagnosisDatabase($link, filter_var($varPost['id']), $credentials['Mode'])));
+           return therapyprojectForm($link, $linksystem, 'therapyproject', 'edit', $credentials, therapyprojectDataPattern($link, $credentials['Mode'],getDataTherapyprojectDatabase($link, filter_var($varPost['id']), $credentials['Mode'])));
 
         }
 
         if(isset($varPost['name'])){
 
-            return primarydiagnosisForm($link, $linksystem, 'primarydiagnosis', 'edit', $credentials, primarydiagnosisDataPattern($link, $credentials['Mode'], $varPost));
+            return therapyprojectForm($link, $linksystem, 'therapyproject', 'edit', $credentials, therapyprojectDataPattern($link, $credentials['Mode'], $varPost));
  
          }
        
-        return primarydiagnosisForm($link, $linksystem, 'primarydiagnosis', 'edit', $credentials, primarydiagnosisDataPattern($link, $credentials['Mode'], null));
+        return therapyprojectForm($link, $linksystem, 'therapyproject', 'edit', $credentials, therapyprojectDataPattern($link, $credentials['Mode'], null));
 
     }
     

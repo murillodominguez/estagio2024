@@ -1,8 +1,8 @@
 <?php
 
-function changeTheStatusOfThePrimarydiagnosis($link, $id, $status, $mode){
+function changeTheStatusOfTheTherapyproject($link, $id, $status, $mode){
 
-    $sql="UPDATE `primarydiagnosis` SET `status`=? WHERE `id`=? and mode=?";
+    $sql="UPDATE `therapyproject` SET `status`=? WHERE `id`=? and mode=?";
     $stmt = $link->prepare($sql);
     $stmt->bind_Param('sis', $status, $id, $mode);
 	$stmt->execute();

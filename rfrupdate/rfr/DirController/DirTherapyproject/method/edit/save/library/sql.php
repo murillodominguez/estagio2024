@@ -1,7 +1,7 @@
 <?php
-function getIDprimarydiagnosis($link, $varSql){
+function getIDtherapyproject($link, $varSql){
 
-    $sql="select id from primarydiagnosis where name=? and matriculafunc=?";
+    $sql="select id from therapyproject where name=? and matriculafunc=?";
     $stmt = $link->prepare($sql);
     $stmt->bind_Param('ss', $varSql['name'], $varSql['matriculafunc']);
 	$stmt->execute();

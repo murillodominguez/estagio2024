@@ -44,9 +44,9 @@ function getIDaccesspermitions($link, $varSql){
 
 function getAccessPermitionsDatabase($link, $id, $mode){
 
-    $sql="select * from accesspermissions where id=? and mode=?";
+    $sql="select * from accesspermissions where id=?";
     $stmt = $link->prepare($sql);
-    $stmt->bind_Param('is', $id, $mode);
+    $stmt->bind_Param('i', $id);
 	$stmt->execute();
 	$result = $stmt->get_result();
     
