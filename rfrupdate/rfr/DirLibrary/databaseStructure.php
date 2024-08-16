@@ -6,11 +6,9 @@ function insertsql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
     $sql2 = ") VALUES (";
     $sqlbindstring = "";
     $recordvalues = $varSql['database'];
-    echo '<br><br><hr><br>Recorded Values: ';
-    var_dump($recordvalues);
-    echo '<br><hr><br><br>';
+
     foreach($rowUserReceivedData as $row){
-         var_dump(isset($row['value']));
+
         if(isset($row['type']) and $row['type'] == 'image' and !isset($row['value'])){
             if(uploadImagetoServer($row, $link, $varPost, $controller, $varSql, $action)) uploadImagetoDatabase($row, $link, $varPost, $controller, $varSql,null,$action);
         }
@@ -33,13 +31,11 @@ function insertsql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
     $sql = rtrim($sql,',');
     $sql2 = rtrim($sql2,',');
     $sql.=$sql2.")";
-    echo '<br>SQL: '.$sql;
-    echo '<br>TYPE: '.$sqlbindstring;
+
     $stmt = $link->prepare($sql);
     //  echo '<br>';
     //  var_dump($link);
-     echo '<br><br>';
-     var_dump($stmt);
+
     //  echo '<hr>';
     //  var_dump($stmt);
          
@@ -49,12 +45,12 @@ function insertsql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
       {
           $bind_arguments[] = & $recordvalues[$recordkey];   
       }
-      var_dump($bind_arguments);
+
           
       call_user_func_array(array($stmt, 'bind_Param'), $bind_arguments);     
       $stmt->execute();
-      echo '<br><br>';
-      var_dump($stmt);
+
+
     //   if(($stmt->affected_rows >0)){
     //     echo "Verdadeiro";
     //   }
@@ -105,16 +101,10 @@ function updatesql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
     $sql = rtrim($sql,', ');
     $sql .= $sqlend;
     $sqlbindstring .= "is";
-    echo "<br><br>Comando SQL UPDATE: ";
-    var_dump($sql);
-    echo "<br><br>SQL STMT BIND STRING: ";
-    var_dump($sqlbindstring);
-    echo "<br><br>";
+
 
     $stmt = $link->prepare($sql);
-    echo "<br><br><hr>";
-    var_dump($stmt);
-    echo "<br><br><hr>";
+
     $bind_arguments = [];
     $bind_arguments[] = $sqlbindstring;
     foreach ($recordvalues as $recordkey => $recordvalue)
@@ -128,9 +118,7 @@ function updatesql($link, $linksystem, $rowUserReceivedData, $varSql, $varPost, 
     // $stmt = $link->prepare($sql);
 	// $stmt->bind_Param('sssis', $varSql['name'], $varSql['nickname'], $varSql['secretary'], $varSql['id'], $credentials['Mode']);
     // $stmt->execute();
-    echo "<br><br><hr>";
-    var_dump($stmt);
-    echo "<br><br><hr>";
+
     return ($stmt->affected_rows >0 || $changeimage=true)?true:false; 
 }
 

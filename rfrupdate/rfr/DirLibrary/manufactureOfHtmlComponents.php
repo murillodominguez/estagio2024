@@ -218,17 +218,15 @@ function manufactureComponentList($link, $linksystem, $varTableHeader, $varLabel
         foreach ($varDataBase as $rowDataBase) {
 
             $return=$return."<tr><td data-label='#:' style='vertical-align:middle'>".++$counter."</th>";
-            var_dump ($rowDataBase);
+            // var_dump ($rowDataBase);
             extract($rowDataBase);
 
             foreach ($varLabelDataBase as $key => $value) {
-              echo $key;
               if($key == 0){
                 if($path == null){
                   $return=$return."<td data-label='".$varTableHeader[$key].":' style='vertical-align:middle;'></td>";
                 }
                 else{
-                echo $path;
                 $path = '/rfr/'.$path;
                   $return=$return."<td data-label='".$varTableHeader[$key].":' style='vertical-align:middle;'><img style='width: 100px; height: 80px;' src='".$path."'></img></td>";
                 }

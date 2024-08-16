@@ -1,9 +1,9 @@
 <?php
 function getIDtherapyproject($link, $varSql){
 
-    $sql="select id from therapyproject where name=? and matriculafunc=?";
+    $sql="select id from therapyproject where name=?";
     $stmt = $link->prepare($sql);
-    $stmt->bind_Param('ss', $varSql['name'], $varSql['matriculafunc']);
+    $stmt->bind_Param('s', $varSql['name']);
 	$stmt->execute();
 	$result = $stmt->get_result();
     
